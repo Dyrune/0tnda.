@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ronaldo Template Clone</title>
+    <link rel="stylesheet" href="/style.css/style.css" />
+    <link rel="stylesheet" href="/script.js/script.js" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <h1><a href="#" id="text">0tnda.</a></h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav> 
+        <div class="mobile">
+          <img src="/icon/icon-menu.svg" alt="">
+          <h3>MENU</h3>
+        </div>
+      </div>
+      <div id="dropdown-content" class="dropdown-content hidden">
+        <div id="cancel-button" class="cancel-button">
+          <img src="/icon/icon-close.svg" alt="">
+          <h3>CLOSE</h3>
+        </div>
+        <div class="contenttt">
+          <a href="#home">Home.</a>
+          <a href="#about">About.</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contacts.</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide Revit" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');">
+                    <button class="filter-btn" data-filter="revit">See revit works</button>
+                </div>
+                <div class="slide Sketchup" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');">
+                    <button class="filter-btn" data-filter="sketchup">see SketchUp works</button>
+                </div>
+                <div class="slide Autocad" style="background-image: url('/IMG/pexels-rickyrecap-1662159.jpg');">
+                    <button class="filter-btn" data-filter="autocad">see Autocad works</button>
+                </div>
+                <div class="slide Lumion" style="background-image: url('/IMG/pexels-axel-vandenhirtz-332204-929280.jpg');">
+                    <button class="filter-btn" data-filter="clearic">see Lumion work</button>
+                </div>
+                <div class="slide Clearic" style="background-image: url('/IMG/pexels-axel-vandenhirtz-332204-929280.jpg');">
+                    <button class="filter-btn" data-filter="clearic">see Clearic</button>
+                </div>
+            </div>
+            <div class="dots"></div>
+        </div>
+    </section>
+    
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>We are a team of dedicated professionals...</p>
+        </div>
+        <div class="about-img">
+          <img src="about-image.jpg" alt="About Us" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="service-item">
+          <i class="icon-service"></i>
+          <h3>Web Design</h3>
+          <p>Beautiful and responsive designs...</p>
+        </div>
+        <div class="service-item">
+          <i class="icon-service"></i>
+          <h3>Development</h3>
+          <p>High-quality and scalable code...</p>
+        </div>
+        <!-- Add more service items as needed -->
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-gallery">
+            <button class="filter-btn" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="revit">Revit</button>
+            <button class="filter-btn" data-filter="sketchup">SketchUp</button>
+            <button class="filter-btn" data-filter="autocad">AutoCAD</button>
+            <button class="filter-btn" data-filter="lumion">Lumion</button>
+            <button class="filter-btn" data-filter="clearic">Clearic</button>
+        </div>
+
+        <div class="portfolio-items">
+          <div class="portfolio-item revit" data-project="revit" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
+          <div class="portfolio-item sketchup" data-project="sketchup" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
+          <div class="portfolio-item autocad" data-project="autocad" style="background-image: url('/IMG/pexels-efrem-efre-2786187-19509322.jpg');"></div>
+          <div class="portfolio-item lumion" data-project="lumion" style="background-image: url('/IMG/pexels-yentl-jacobs-43020-157811.jpg');"></div>
+          <div class="portfolio-item clearic" data-project="clearic" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
+          <!-- Add more portfolio items as needed -->
+      </div>
+  
+      <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <span class="arrow left">&#10094;</span>
+        <img id="lightbox-image" src="" alt="Project Image">
+        <span class="arrow right">&#10095;</span>
+        <div class="lightbox-dots"></div> <!-- Dots container -->
+    </div>
+    
+  
+    </section>
+      
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Ronaldo. All rights reserved.</p>
+        <ul class="social-media">
+          <li>
+            <a href="#"><i class="icon-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="icon-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="icon-linkedin"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="/script.js/script.js"></script>
+  </body>
+</html>
