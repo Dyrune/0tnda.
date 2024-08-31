@@ -8,17 +8,24 @@
     margin-bottom: 30px;
 }
 
+.Project .filter-btn {
+    background-color: black;
+}
+
 .filter-btn {
     padding: 10px 20px;
+    width: 180px;
     margin: 5px;
-    background-color: #333;
-    color: #fff;
-    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 50px;
     cursor: pointer;
+    background-color: #555;
+    box-shadow: 1px 8px 8px rgb(71, 7, 7);
 }
 
 .filter-btn.active {
-    background-color: #555;
+    background-color: #0d0342;
 }
 
 .project-info {
@@ -74,6 +81,9 @@ body, html {
 .slide {
     min-width: 100%;
     height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-size: cover;
     background-position: center;
 }
@@ -159,6 +169,16 @@ body, html {
         align-items: center;
     }
 
+    #dropdown-content #cancle-button h3 {
+        display: flex;
+        justify-content: center;
+        color: #555;
+        font-stretch: extra-expanded;
+        font-size: 20px;
+        cursor: pointer;
+        align-items: center;
+    }
+
     .mobile img {
         padding: 10px;
         height: 25px;
@@ -167,6 +187,56 @@ body, html {
     #header .container nav {
         display: none;
     }
+}
+
+.iconlinks {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    padding: 10px;
+}
+
+.iconlinks span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.iconlinks span hr {
+    width: 40px;
+    height: 1px;
+    background-color: black;
+}
+
+.iconlinks img:hover hr {
+    background-color: red;
+}
+
+.iconlinks img:hover {
+    transform: scale(1.15);
+}
+
+.iconlinks img {
+    width: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+    height: 30px;
+    padding: 10px;
+}
+
+.contenttt a {
+    text-decoration: none;
+    padding: 15px;
+    color: #313030;
+}
+
+.contenttt {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 22px;
 }
 
 
@@ -338,3 +408,10 @@ li {
 .dropdown-content.active {
     right: 0; /* Slide into view */
   }
+
+.Project {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

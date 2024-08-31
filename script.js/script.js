@@ -1,9 +1,7 @@
-
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded and ready.');
-    
-    // Example: Smooth Scroll for Navigation
+
+    // Smooth Scroll for Navigation
     document.querySelectorAll('#header nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -93,8 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Automatically click the "All Projects" button on load
-    document.querySelector('.filter-btn[data-filter="all"]').click();
+    // Automatically scroll to the home section on load
+    document.querySelector('#home').scrollIntoView({
+        behavior: 'smooth'
+    });
 
     // Smooth scroll for slider buttons
     document.querySelectorAll('.slide button a').forEach(anchor => {
@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Dropdown menu functionality
     const dropdownButton = document.getElementById('dropdown-button');
     const dropdownContent = document.getElementById('dropdown-content');
     const cancelButton = document.getElementById('cancel-button');

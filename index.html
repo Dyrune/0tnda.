@@ -6,9 +6,12 @@
     <title>Ronaldo Template Clone</title>
     <link rel="stylesheet" href="/style.css/style.css" />
     <link rel="stylesheet" href="/script.js/script.js" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -23,15 +26,15 @@
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-        </nav> 
+        </nav>
         <div class="mobile">
-          <img src="/icon/icon-menu.svg" alt="">
+          <img src="/icon/icon-menu.svg" alt="" />
           <h3>MENU</h3>
         </div>
       </div>
       <div id="dropdown-content" class="dropdown-content hidden">
         <div id="cancel-button" class="cancel-button">
-          <img src="/icon/icon-close.svg" alt="">
+          <img src="/icon/icon-close.svg" alt="" />
           <h3>CLOSE</h3>
         </div>
         <div class="contenttt">
@@ -41,33 +44,72 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#contact">Contacts.</a>
         </div>
+        <div class="iconlinks">
+          <span><hr><img src="/icon/upwork.png" alt="" /></span>
+          <span><hr><img src="/icon/whatsapp (2).png" alt="" /></span>
+          <span><hr><img src="/icon/phone-receiver-silhouette.png" alt="" /></span>
+          <span><hr><img src="/icon/gmail-logo.png" alt="" /></span>
+        </div>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="slider">
-            <div class="slides">
-                <div class="slide Revit" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');">
-                    <button class="filter-btn" data-filter="revit">See revit works</button>
-                </div>
-                <div class="slide Sketchup" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');">
-                    <button class="filter-btn" data-filter="sketchup">see SketchUp works</button>
-                </div>
-                <div class="slide Autocad" style="background-image: url('/IMG/pexels-rickyrecap-1662159.jpg');">
-                    <button class="filter-btn" data-filter="autocad">see Autocad works</button>
-                </div>
-                <div class="slide Lumion" style="background-image: url('/IMG/pexels-axel-vandenhirtz-332204-929280.jpg');">
-                    <button class="filter-btn" data-filter="clearic">see Lumion work</button>
-                </div>
-                <div class="slide Clearic" style="background-image: url('/IMG/pexels-axel-vandenhirtz-332204-929280.jpg');">
-                    <button class="filter-btn" data-filter="clearic">see Clearic</button>
-                </div>
-            </div>
-            <div class="dots"></div>
+      <div class="slider">
+        <div class="slides">
+          <div
+            class="slide Revit"
+            style="background-image: linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url('/IMG/pexels-pixabay-262367.jpg')"
+          >       
+          <div class="Project"> <span> Projects done on SketchUp</span>
+            <button class="filter-btn" data-filter="sketchup">
+              SketchUp Projects
+            </button></div>
+          </div>
+          <div
+            class="slide Sketchup"
+            style="background-image: linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url('/IMG/pexels-joshkjack-135018.jpg')"
+          >
+          <div class="Project"> <span> Projects done on SketchUp</span>
+            <button class="filter-btn" data-filter="sketchup">
+              SketchUp Projects
+            </button></div>
+          </div>
+          <div
+            class="slide Autocad"
+            style="background-image:linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url('/IMG/pexels-igor-starkov-233202-1117452.jpg"
+          >         
+          <div class="Project"> <span> Projects done on SketchUp</span>
+            <button class="filter-btn" data-filter="sketchup">
+              SketchUp Projects
+            </button></div>
+          </div>
+          <div
+            class="slide Lumion"
+            style="
+              background-image: linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url('/IMG/pexels-efrem-efre-2786187-19509322.jpg');
+            "
+          >       
+          <div class="Project"> <span> Projects done on SketchUp</span>
+            <button class="filter-btn" data-filter="sketchup">
+              SketchUp Projects
+            </button></div>
+          </div>
+          <div
+            class="slide Clearic"
+            style="
+              background-image: linear-gradient(to bottom, rgb(19, 18, 18),rgba(66, 63, 63, 0.425) 50%), url('/IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+            "
+          >         
+          <div class="Project"> <span> Projects done on SketchUp</span>
+            <button class="filter-btn" data-filter="sketchup">
+              SketchUp Projects
+            </button></div>
+          </div>
         </div>
+        <div class="dots"></div>
+      </div>
     </section>
-    
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -102,35 +144,58 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
-        <div class="portfolio-gallery">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="revit">Revit</button>
-            <button class="filter-btn" data-filter="sketchup">SketchUp</button>
-            <button class="filter-btn" data-filter="autocad">AutoCAD</button>
-            <button class="filter-btn" data-filter="lumion">Lumion</button>
-            <button class="filter-btn" data-filter="clearic">Clearic</button>
-        </div>
-
-        <div class="portfolio-items">
-          <div class="portfolio-item revit" data-project="revit" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
-          <div class="portfolio-item sketchup" data-project="sketchup" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
-          <div class="portfolio-item autocad" data-project="autocad" style="background-image: url('/IMG/pexels-efrem-efre-2786187-19509322.jpg');"></div>
-          <div class="portfolio-item lumion" data-project="lumion" style="background-image: url('/IMG/pexels-yentl-jacobs-43020-157811.jpg');"></div>
-          <div class="portfolio-item clearic" data-project="clearic" style="background-image: url('/IMG/pexels-pixabay-262367.jpg');"></div>
-          <!-- Add more portfolio items as needed -->
+      <div class="portfolio-gallery">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="revit">Revit</button>
+        <button class="filter-btn" data-filter="sketchup">SketchUp</button>
+        <button class="filter-btn" data-filter="autocad">AutoCAD</button>
+        <button class="filter-btn" data-filter="lumion">Lumion</button>
+        <button class="filter-btn" data-filter="clearic">Clearic</button>
       </div>
-  
+
+      <div class="portfolio-items">
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="background-image: url('/IMG/pexels-pixabay-262367.jpg')"
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="background-image: url('/IMG/pexels-pixabay-262367.jpg')"
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('/IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('/IMG/pexels-yentl-jacobs-43020-157811.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="background-image: url('/IMG/pexels-pixabay-262367.jpg')"
+        ></div>
+        <!-- Add more portfolio items as needed -->
+      </div>
+
       <div class="lightbox" id="lightbox">
         <span class="close">&times;</span>
         <span class="arrow left">&#10094;</span>
-        <img id="lightbox-image" src="" alt="Project Image">
+        <img id="lightbox-image" src="" alt="Project Image" />
         <span class="arrow right">&#10095;</span>
-        <div class="lightbox-dots"></div> <!-- Dots container -->
-    </div>
-    
-  
+        <div class="lightbox-dots"></div>
+        <!-- Dots container -->
+      </div>
     </section>
-      
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
