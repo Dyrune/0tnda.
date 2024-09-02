@@ -1,5 +1,5 @@
 .portfolio {
-    padding: 50px 0;
+    padding: 30px 0;
     background-color: #f4f4f4;
 }
 
@@ -9,23 +9,38 @@
 }
 
 .Project .filter-btn {
-    background-color: black;
+    display: flex;
+    justify-content: left;
+    background-color: transparent;
+    margin: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    align-items: center;
+    font-weight: bolder;
+    padding: 20px;
+    font-stretch: ultra-expanded;
+}
+
+.Notepad {
+    color: white;
+    padding: 20px;
+    font-size: 18px;
 }
 
 .filter-btn {
-    padding: 10px 20px;
-    width: 180px;
-    margin: 5px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 34px;
     height: 50px;
     cursor: pointer;
-    background-color: #555;
-    box-shadow: 1px 8px 8px rgb(71, 7, 7);
+}
+
+.about-img img {
+    width: 100%;
+    height: 50vh;
 }
 
 .filter-btn.active {
-    background-color: #0d0342;
+    background-color: #a4a3ad;
 }
 
 .project-info {
@@ -41,7 +56,8 @@
     transition: transform 0.3s ease;
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -72,7 +88,14 @@ body, html {
     color: rgb(10, 10, 10);
     text-shadow: 1px 3px 3px #555;
 }
-  
+
+.selec {
+    font-size: 32px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -89,13 +112,17 @@ body, html {
 }
 
 .slide button {
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+#portfolio .filter-btn {
+    border: 1px solid #313030;
+    width: 40%;
+    font-size: 18px;
+    margin: 5px 20px;
 }
 
 .portfolio-gallery {
@@ -105,15 +132,47 @@ body, html {
 }
 
 .portfolio-items {
-    display: grid;
+    display: hidden;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
     padding: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(50%);
+        opacity: 0.3;
+    }
+
+    to {
+        transform: translateX(25%);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.portfolio-item.show {
+    opacity: 0;
+    animation: slideIn 1.5s forwards;
 }
 
 .portfolio-item {
     width: 100%;
-    padding-top: 75%; /* Aspect ratio */
+    padding-top: 75%;
+    margin-bottom: 20px;
+    /* Aspect ratio */
+    opacity: 0;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -130,22 +189,87 @@ body, html {
     box-shadow: 2px 4px 4px gray;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures the header stays on top */
-    background-color: white; /* Ensures the header background is solid */
-    box-shadow: 0 2px 10px #313030; /* Adds a subtle box shadow */
+    z-index: 1000;
+    /* Ensures the header stays on top */
+    background-color: white;
+    /* Ensures the header background is solid */
+    box-shadow: 0 2px 10px #313030;
+    /* Adds a subtle box shadow */
+}
+
+.serve {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.serve div {
+    margin: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.services .container H2 {
+    font-size: xx-large;
+}
+
+@media (min-width: 1024px) {
+    .portfolio-items {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+    }
+
+    .serve {
+        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+    
+    }
+
+    .about-img img {
+        width: 60vh;
+        height: auto;
+    }
+
+    #about .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 
 @media (max-width: 1024px) {
     .portfolio-items {
         grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    .serve {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    
     }
 }
-
 
 @media (max-width: 768px) {
     .portfolio-items {
         grid-template-columns: 1fr;
     }
+
+    .ic {
+        display: none;
+    }
+    
+    .serve {
+        grid-template-columns: 1fr;
+        display: grid;
+    
+    }
+
     .portfolio-gallery {
         display: flex;
         flex-direction: column;
@@ -179,6 +303,16 @@ body, html {
         align-items: center;
     }
 
+
+    .portfolio-items {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
     .mobile img {
         padding: 10px;
         height: 25px;
@@ -189,11 +323,25 @@ body, html {
     }
 }
 
+.ic .iconlinks {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    padding: 10px;
+}
+
 .iconlinks {
     display: flex;
     flex-direction: column;
     float: right;
-    padding: 10px;
+}
+
+.ic .iconlinks span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
 }
 
 .iconlinks span {
@@ -201,7 +349,10 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
+}
+
+.ic .iconlinks span hr {
+    display: none;
 }
 
 .iconlinks span hr {
@@ -218,6 +369,13 @@ body, html {
     transform: scale(1.15);
 }
 
+.ic .iconlinks img {
+    width: 30px;
+    transition: transform 0.3s ease;
+    position: relative;
+    height: 30px;
+}
+
 .iconlinks img {
     width: 30px;
     transition: transform 0.3s ease;
@@ -228,17 +386,15 @@ body, html {
 
 .contenttt a {
     text-decoration: none;
-    padding: 15px;
     color: #313030;
 }
 
 .contenttt {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 10px 20px;
     font-size: 22px;
 }
-
 
 #header .container {
     display: flex;
@@ -248,12 +404,19 @@ body, html {
 
 .container nav ul {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.container nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 35px;
+    font-size: 20px;
 }
 
 li {
     list-style: none;
 }
-
 
 .dots {
     position: absolute;
@@ -276,14 +439,14 @@ li {
     background-color: #313030;
 }
 
-
 .container nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
- /* Lightbox styles */
- .lightbox {
+
+/* Lightbox styles */
+.lightbox {
     display: none;
     position: fixed;
     top: 0;
@@ -295,11 +458,13 @@ li {
     align-items: center;
     z-index: 9999;
 }
+
 .lightbox img {
     max-width: 80%;
     max-height: 80%;
     margin: 20px;
 }
+
 .lightbox .close {
     position: absolute;
     top: 20px;
@@ -308,6 +473,7 @@ li {
     color: white;
     cursor: pointer;
 }
+
 .lightbox .arrow {
     position: absolute;
     top: 50%;
@@ -344,6 +510,7 @@ li {
 .lightbox .arrow.left {
     left: 30px;
 }
+
 .lightbox .arrow.right {
     right: 30px;
 }
@@ -359,6 +526,7 @@ li {
     margin: 30px;
     background-color: white;
 }
+
 .cancel-button {
     padding-right: 15px;
     justify-content: right;
@@ -379,6 +547,7 @@ li {
     justify-content: right;
     display: flex;
 }
+
 /* Hidden class to hide elements */
 .hidden {
     display: none;
@@ -406,12 +575,41 @@ li {
 }
 
 .dropdown-content.active {
-    right: 0; /* Slide into view */
-  }
+    right: 0;
+    /* Slide into view */
+}
 
 .Project {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-form input {
+    width: 70%;
+    margin: 10px;
+    height: 5vh;
+}
+
+#contact-form textarea {
+    width: 80%;
+    height: 10vh;
+    margin: 10px;
+}
+
+footer {
+    background-color: chocolate;
+    height: 70vh;
 }

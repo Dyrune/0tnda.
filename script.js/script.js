@@ -293,3 +293,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+  document.addEventListener('DOMContentLoaded', function() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+    function checkVisibility() {
+      portfolioItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const triggerHeight = window.innerHeight * 0.8; // 80% of the viewport height
+  
+        if (rect.top < triggerHeight) {
+          item.classList.add('show');
+        }
+      });
+    }
+  
+    // Check visibility on scroll and on page load
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+  });
+  
