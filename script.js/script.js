@@ -312,3 +312,9 @@ document.addEventListener("DOMContentLoaded", () => {
     checkVisibility();
   });
   
+
+ // document.querySelector('.mobile img').addEventListener('click', function() {
+  // document.getElementById('dropdownn-content').classList.toggle('hidden');
+
+ // });
+
