@@ -18,13 +18,13 @@
     <!-- Header -->
     <header id="header">
       <div class="container">
-        <h1><a href="#" id="text">0tnda.</a></h1>
+        <h1><a href="/index.html" id="text">0tnda.</a></h1>
         <div style="display: flex; align-items: center">
           <nav>
             <ul>
               <div class="huh">
                 <div><a href="#home">Home</a></div>
-                <div> <a href="#about">About</a></div>
+                <div><a href="#about">About</a></div>
                 <div class="dropdownn">
                   <a href="#services" class="contenttt">Services</a>
                   <div class="dropdownn-content">
@@ -35,30 +35,30 @@
                   </div>
                 </div>
                 <div class="dropdownn">
-                 <a href="/html/portfolio.html">Portfolio</a>
+                  <li class="dropdownn">
+                  <a href="/html/portfolio.html">Portfolio</a>
                   <div class="dropdownn-content">
-                   <a href="#">Community</a>
-                   <a href="#">Industrial</a>
-                   <a href="#">Education</a>
-                   <a href="#">Automotive</a>
-                   <a href="#">Residential</a>
-                   <a href="#">Automotive</a>
+                    <button class="filter-btn" data-filter="revit"><a href="#">Community</a></button>
+                    <button class="filter-btn" data-filter="sketchup"><a href="#">Industrial</a></button>
+                    <button class="filter-btn" data-filter="autocad"><a href="#">Education</a></button>
+                    <button class="filter-btn" data-filter="lumion"><a href="#">Automative</a></button>
+                    <button class="filter-btn" data-filter="clearic"><a href="#">Residential</a></button>
                   </div>
-                </div>
+                </li> </div>
                 <div><a href="#contact">Contact</a></div>
               
             </div></ul>
           </nav>
           <div class="ic">
             <div class="iconlinks">
-              <span
-                ><hr />
-                <img src="/icon/upwork.png" alt=""
-              /></span>
-              <span
-                ><hr />
+             <hr />
                 <img src="/icon/whatsapp (2).png" alt=""
-              /></span>
+              /></span> <span
+              ><hr />
+              <img src="/icon/upwork.png" alt=""
+            /></span>
+            <span
+              >
               <span
                 ><hr />
                 <img src="/icon/phone-receiver-silhouette.png" alt=""
@@ -95,12 +95,11 @@
             <div class="dropdownn">
              <a href="/html/portfolio.html">Portfolio</a>
               <div class="dropdownn-content">
-               <a href="#">Community</a>
-               <a href="#">Industrial</a>
-               <a href="#">Education</a>
-               <a href="#">Automotive</a>
-               <a href="#">Residential</a>
-               <a href="#">Automotive</a>
+                <button class="filter-btn" data-filter="revit"><a href="#">Community</a></button>
+                <button class="filter-btn" data-filter="sketchup"><a href="#">Industrial</a></button>
+                <button class="filter-btn" data-filter="autocad"><a href="#">Education</a></button>
+                <button class="filter-btn" data-filter="lumion"><a href="#">Automative</a></button>
+                <button class="filter-btn" data-filter="clearic"><a href="#">Residential</a></button>
               </div>
             </div>
             <div><a href="#contact">Contact</a></div>
@@ -125,7 +124,6 @@
         </div>
       </div>
     </header>
-git
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="slider">
@@ -255,7 +253,9 @@ git
       <div class="container">
         <div class="about-text">
           <h2>About Me</h2>
-          <p>We are a team of dedicated professionals...</p>
+          <div class="context">
+            My name is Akinloye. known as 0tnda.
+          </div>
         </div>
         <div class="about-img">
           <img src="/IMG/work-5.jpg" alt="About Us" />
@@ -269,7 +269,7 @@ git
         <h2>Our Services</h2>
         <div class="serve">
           <div class="service-item">
-            <h3>Revit Designs</h3>
+            <h3>MasterPlanning</h3>
             <span
               >how good my revit designs are, what you get vs what you want, the
               peace of mind working with me, my goal is your goal and it must be
@@ -278,7 +278,7 @@ git
             <button>See Revit Works</button>
           </div>
           <div class="service-item">
-            <h3>AutoCAD Designs</h3>
+            <h3>Architecture</h3>
             <span
               >how good my AutoCAD designs are, what you get vs what you want,
               the peace of mind working with me, my goal is your goal and it
@@ -287,7 +287,7 @@ git
             <button>See AutoCAD Works</button>
           </div>
           <div class="service-item">
-            <h3>Lumion Designs</h3>
+            <h3>Interior</h3>
             <span
               >how good my Lumion designs are, what you get vs what you want,
               the peace of mind working with me, my goal is your goal and it
@@ -296,7 +296,7 @@ git
             <button>See Lumion Works</button>
           </div>
           <div class="service-item">
-            <h3>SketchUp Designs</h3>
+            <h3>3D Designs</h3>
             <span
               >how good my SketchUp designs are, what you get vs what you want,
               the peace of mind working with me, my goal is your goal and it
@@ -305,7 +305,7 @@ git
             <button>See SketchUp Works</button>
           </div>
           <div class="service-item">
-            <h3>Clearic Designs</h3>
+            <h3>Freelancing</h3>
             <span
               >how good my Clearic designs are, what you get vs what you want,
               the peace of mind working with me, my goal is your goal and it
@@ -318,7 +318,7 @@ git
       </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
+  <!--<section id="portfolio" class="portfolio">
       <div class="selec">Selected Work</div>
       <div class="portfolio-gallery">
         <button class="filter-btn" data-filter="all">All</button>
@@ -369,8 +369,8 @@ git
         >
           Work 5
         </div>
-        <!-- Add more portfolio items as needed -->
-      </div>
+         Add more portfolio items as needed 
+      </div> -->  
 
       <div class="lightbox" id="lightbox">
         <span class="close">&times;</span>
@@ -381,7 +381,290 @@ git
         <!-- Dots container -->
       </div>
     </section>
+   <!--<section id="portfolio" class="portfolio">
+      <div class="selec">Selected Work</div>
+      <div class="portfolio-gallery">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="revit">Community</button>
+        <button class="filter-btn" data-filter="sketchup">Industrial</button>
+        <button class="filter-btn" data-filter="autocad">Educational</button>
+        <button class="filter-btn" data-filter="lumion">Automative</button>
+        <button class="filter-btn" data-filter="Clearic">Residential</button>
+      </div>
 
+      <div class="portfolio-items">
+         Portfolio Items 
+        <div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          ">
+        </div>
+        <span>
+          <h2>Location</h2>
+          <p>Revit Design</p>
+          <span>More about the Design would go in here as per we need more</span>
+        </span>
+      </div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item sketchup"
+          data-project="sketchup"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item lumion"
+          data-project="lumion"
+          style="
+            background-image: url('../IMG/pexels-axel-vandenhirtz-332204-929280.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item clearic"
+          data-project="clearic"
+          style="background-image: url('../IMG/pexels-joshkjack-135018.jpg')"
+        ></div>
+        <div
+          class="portfolio-item autocad"
+          data-project="autocad"
+          style="
+            background-image: url('../IMG/pexels-igor-starkov-233202-1117452.jpg');
+          "
+        ></div>
+        <div
+          class="portfolio-item revit"
+          data-project="revit"
+          style="
+            background-image: url('../IMG/pexels-efrem-efre-2786187-19509322.jpg');
+          "
+        ></div>
+
+         Add more items as needed 
+      </div> --> 
+
+      <!-- Show More Button -->
+      <button id="loadMore"><a href="/html/portfolio.html#portfolio">Show More</a></button>
+
+      <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <span class="arrow left">&#10094;</span>
+        <img id="lightbox-image" src="" alt="Project Image" />
+        <span class="arrow right">&#10095;</span>
+        <div class="lightbox-dots"></div>
+        <!-- Dots container -->
+      </div>
+    </section>
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">

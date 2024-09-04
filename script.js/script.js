@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth Scroll for Navigation
     document.querySelectorAll('#header nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize slider
     createDots();
     showSlide(currentIndex);
-    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    setInterval(nextSlide, 8000); // Change slide every 5 seconds
 
     // Filter projects based on category
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scroll for slider buttons
     document.querySelectorAll('.slide button a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
@@ -272,49 +272,75 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownButton = document.querySelector(".mobile");
     const cancelButton = document.getElementById("cancel-button");
     const dropdownContent = document.getElementById("dropdown-content");
-  
+
     // Ensure the dropdown menu is hidden initially
     dropdownContent.classList.add("hidden");
-  
+
     // Show dropdown with sliding effect when the menu is clicked
     dropdownButton.addEventListener("click", () => {
-      dropdownContent.classList.remove("hidden"); // Show the element
-      setTimeout(() => {
-        dropdownContent.classList.add("active"); // Trigger the sliding animation
-      }, 10); // Small delay to allow for the display update
+        dropdownContent.classList.remove("hidden"); // Show the element
+        setTimeout(() => {
+            dropdownContent.classList.add("active"); // Trigger the sliding animation
+        }, 10); // Small delay to allow for the display update
     });
-  
+
     // Hide dropdown with sliding effect when the cancel button is clicked
     cancelButton.addEventListener("click", () => {
-      dropdownContent.classList.remove("active"); // Trigger the slide-out animation
-      setTimeout(() => {
-        dropdownContent.classList.add("hidden"); // Hide the element after the animation
-      }, 2000); // Duration matches the CSS transition (0.3s)
+        dropdownContent.classList.remove("active"); // Trigger the slide-out animation
+        setTimeout(() => {
+            dropdownContent.classList.add("hidden"); // Hide the element after the animation
+        }, 2000); // Duration matches the CSS transition (0.3s)
     });
-  });
-  
-  document.addEventListener('DOMContentLoaded', function() {
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
-  
+
     function checkVisibility() {
-      portfolioItems.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        const triggerHeight = window.innerHeight * 0.8; // 80% of the viewport height
-  
-        if (rect.top < triggerHeight) {
-          item.classList.add('show');
-        }
-      });
+        portfolioItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const triggerHeight = window.innerHeight * 0.8; // 80% of the viewport height
+
+            if (rect.top < triggerHeight) {
+                item.classList.add('show');
+            }
+        });
     }
-  
+
     // Check visibility on scroll and on page load
     window.addEventListener('scroll', checkVisibility);
     checkVisibility();
-  });
-  
+});
 
- // document.querySelector('.mobile img').addEventListener('click', function() {
-  // document.getElementById('dropdownn-content').classList.toggle('hidden');
 
- // });
+// document.querySelector('.mobile img').addEventListener('click', function() {
+// document.getElementById('dropdownn-content').classList.toggle('hidden');
 
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let portfolioItems = document.querySelectorAll('.portfolio-item');
+    let loadMoreBtn = document.getElementById('loadMore');
+    let itemsToShow = 9; // Number of columns to show initially
+    let totalItems = portfolioItems.length;
+
+    // Initially hide all items except the first three columns
+    portfolioItems.forEach((item, index) => {
+        if (index >= itemsToShow) {
+            item.style.display = 'none';
+        }
+    });
+
+    loadMoreBtn.addEventListener('click', function() {
+        itemsToShow += 6; // Increase items to show by 3 on each click
+        portfolioItems.forEach((item, index) => {
+            if (index < itemsToShow) {
+                item.style.display = 'block';
+            }
+        });
+        // Hide button when all items are displayed
+        if (itemsToShow >= totalItems) {
+            loadMoreBtn.style.display = 'none';
+        }
+    });
+});
