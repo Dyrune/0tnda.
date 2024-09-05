@@ -89,8 +89,10 @@ html {
 }
 
 .slide {
-  min-width: 100%;
+  min-width: 94%;
+  margin: 2% 3%;
   height: 70vh;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -224,7 +226,7 @@ html {
 }
 
 .container div nav ul div a:hover {
-  font-weight: bolder;
+  border-bottom: 3px solid black;
   overflow: hidden;
 }
 
@@ -426,17 +428,17 @@ html {
 }
 
 .ic .iconlinks img {
-  width: 30px;
+  width: 25px;
   transition: transform 0.3s ease;
   position: relative;
-  height: 30px;
+  height: 25px;
 }
 
 .iconlinks img {
-  width: 30px;
+  width: 25px;
   transition: transform 0.3s ease;
   position: relative;
-  height: 30px;
+  height: 25px;
   padding: 10px;
 }
 
@@ -493,6 +495,7 @@ li {
   display: inline-block;
   background-color: white;
   border-radius: 50%;
+  border: 1px solid black;
   width: 20px;
   height: 20px;
   margin: 0 5px;
@@ -501,6 +504,7 @@ li {
 
 .dot.active {
   background-color: black;
+  border: 1px solid white;
 }
 
 .container nav {
@@ -780,4 +784,13 @@ nav ul li div a {
   cursor: pointer;
   border-radius: 5px;
   font-size: 18px;
+}
+
+nav ul div a.active {
+  border-bottom: 2px solid black;
+}
+
+#loadMore a {
+  text-decoration: none;
+  color: black;
 }
