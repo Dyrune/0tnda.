@@ -1,17 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Document loaded and ready.');
-
-  // Smooth Scroll for Navigation
-  document.querySelectorAll('#header nav ul li a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
+    console.log('Document loaded and ready.');
+  
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('#header div div nav ul div div a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+  
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            // Ensure that the element exists before trying to scroll
+            if (target) {
+                // Adjust for fixed headers if necessary
+                const offset = target.offsetTop - document.querySelector('#header').offsetHeight;
+                
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
-
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Document loaded and ready.');
+  
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('#home div a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+  
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            // Ensure that the element exists before trying to scroll
+            if (target) {
+                // Adjust for fixed headers if necessary
+                const offset = target.offsetTop - document.querySelector('#header').offsetHeight;
+                
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -373,3 +405,52 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.carousel__item');
+    const nextBtn = document.querySelector('.carousel__control.right');
+    const prevBtn = document.querySelector('.carousel__control.left');
+  
+    let currentIndex = 0;
+  
+    function updateCarousel() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentIndex) {
+          slide.classList.add('active');
+        }
+      });
+  
+      const offset = -currentIndex * slides[0].offsetWidth;
+      document.querySelector('.carousel__inner').style.transform = `translateX(${offset}px)`;
+      
+      // Add event listener to the active slide
+      slides.forEach(slide => slide.removeEventListener('click', goToServicePage)); // Remove previous listeners
+      slides[currentIndex].addEventListener('click', goToServicePage);
+    }
+  
+    function goToNextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    }
+  
+    function goToPreviousSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+  
+    function goToServicePage() {
+      window.location.href = '/html/service.html';
+    }
+  
+    // Event listeners for manual control
+    nextBtn.addEventListener('click', goToNextSlide);
+    prevBtn.addEventListener('click', goToPreviousSlide);
+  
+    // Initialize the carousel
+    updateCarousel();
+  
+    // Auto-scroll every 10 seconds (10,000 milliseconds)
+    setInterval(goToNextSlide, 10000);
+  });  
