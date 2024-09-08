@@ -220,30 +220,255 @@ function createDots() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const projects = {
-        'community': [
-            '/IMG/images/02_rosa-turrita.jpg',
+        'project1': [
+            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
             '/IMG/pexels-pixabay-262367.jpg',
         ],
-        'sketchup': [
-            '/IMG/pexels-pixabay-262367.jpg',
+        'project2': [
+            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
             '/IMG/pexels-pixabay-262367.jpg'
         ],
-        'educational': [
+        'project3': [
+            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project4': [
+            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project5': [
+            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project6': [
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
             '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
         ],
-        'lumion': [
+        'project7': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
             '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
-            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
-            '/IMG/pexels-yentl-jacobs-43020-157811.jpg'
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
         ],
-        'industrial': [
-            '/IMG/pexels-pixabay-262367.jpg',
+        'project8': [
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
-            '/IMG/pexels-pixabay-262367.jpg'
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project9': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project10': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project11': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project12': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project13': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project14': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project15': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project16': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project17': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project18': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project19': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project20': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project21': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project22': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project23': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project24': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project25': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project26': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project27': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project28': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project29': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project30': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project31': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project32': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project33': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project34': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project35': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project36': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project37': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project38': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project39': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project40': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project41': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project42': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project43': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project44': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project45': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project46': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project47': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project48': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project49': [
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
+            '/IMG/pexels-yentl-jacobs-43020-157811.jpg',
+            '/IMG/pexels-efrem-efre-2786187-19509322.jpg'
+        ],
+        'project50': [
+            '/IMG/some-image.jpg',
+            '/IMG/another-image.jpg',
+            '/IMG/last-image.jpg'
         ]
     };
 
@@ -277,9 +502,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.portfolio-item').forEach(item => {
         item.addEventListener('click', () => {
-            const project = item.getAttribute('data-project');
-            if (projects[project]) {
-                currentImages = projects[project];
+            const projectId = item.getAttribute('id');
+            if (projects[projectId]) {
+                currentImages = projects[projectId];
                 currentIndex = 0;
                 lightboxImage.src = currentImages[currentIndex];
                 createDots(); // Create dots when opening lightbox
@@ -304,6 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDots();
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -477,44 +703,59 @@ document.addEventListener("DOMContentLoaded", function () {
 });  
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const btnHeaderButtons = document.querySelectorAll(".btnheader .filter-btn");
     const portfolioGalleryButtons = document.querySelectorAll(".portfolio-gallery .filter-btn");
-
+    const portfolioFilter = document.getElementById("portfolio-filter");
+  
     // Function to update the visibility of .portfolio-gallery buttons based on the active filter
     function updatePortfolioGalleryButtons(activeFilter) {
       portfolioGalleryButtons.forEach(button => {
-        if (activeFilter === "all" || button.getAttribute("data-filter") === activeFilter) {
-          button.style.display = "block"; // Show button
+        if (activeFilter === "all") {
+          button.style.display = button.getAttribute("data-filter") === "all" ? "block" : "none"; // Show only "All"
+        } else if (button.getAttribute("data-filter") === activeFilter) {
+          button.style.display = "block"; // Show button matching filter
         } else {
-          button.style.display = "none"; // Hide button
+          button.style.display = "none"; // Hide other buttons
         }
       });
     }
-
+  
     // Function to handle button clicks in .btnheader
     function handleButtonClick(event) {
       const filter = event.target.getAttribute("data-filter");
-
+  
       // Update the button styles in .btnheader
       btnHeaderButtons.forEach(btn => {
         btn.classList.remove("active"); // Remove active class from all buttons
       });
       event.target.classList.add("active"); // Add active class to the clicked button
-
+  
       // Update the visibility of .portfolio-gallery buttons based on the active filter
       updatePortfolioGalleryButtons(filter);
     }
-
+  
     // Attach click event listeners to filter buttons
     btnHeaderButtons.forEach(button => {
       button.addEventListener("click", handleButtonClick);
     });
-
+  
+    // Handle click on the portfolio anchor to filter only the "All" button
+    portfolioFilter.addEventListener("click", function() {
+      // Show only the "All" button in the .portfolio-gallery
+      updatePortfolioGalleryButtons("all");
+  
+      // Optionally, remove active class from other buttons in .btnheader
+      btnHeaderButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+    });
+  
     // Optionally, click the "All" button to show all items by default
     document.querySelector('.btnheader .filter-btn[data-filter="all"]').click();
   });
-
+  
   
 
   
@@ -563,3 +804,31 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+  
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Response:', data); // Log the server response
+            if (data.startsWith('success')) {
+                alert("Message sent successfully!");
+                form.reset(); // Optionally reset the form
+            } else {
+                alert("There was an issue sending your message. Please try again.");
+            }
+        })
+        .catch(error => {
+            alert("An error occurred. Please try again.");
+            console.error('Error:', error);
+        });
+    });
+});
