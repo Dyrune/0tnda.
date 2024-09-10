@@ -1,9 +1,8 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded and ready.');
 
     // Smooth Scroll for Navigation
-    document.querySelectorAll('#header div div nav ul div div a').forEach(anchor => {
+    document.querySelectorAll('.container nav ul a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
@@ -21,33 +20,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
+    // IntersectionObserver for section highlighting
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.container nav ul a'); // Select all nav links
 
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Adjust as needed
+    };
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Document loaded and ready.');
-
-    // Smooth Scroll for Navigation
-    document.querySelectorAll('#home div a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const target = document.querySelector(this.getAttribute('href'));
-
-            // Ensure that the element exists before trying to scroll
-            if (target) {
-                // Adjust for fixed headers if necessary
-                const offset = target.offsetTop - document.querySelector('#header').offsetHeight;
-
-                window.scrollTo({
-                    top: offset,
-                    behavior: 'smooth'
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+                
+                // Loop through all nav items and apply/remove the active class
+                navItems.forEach(item => {
+                    if (item.getAttribute('href') === `#${sectionId}`) {
+                        item.classList.add('active');  // Add 'active' class to the matched link
+                    } else {
+                        item.classList.remove('active');  // Remove 'active' from others
+                    }
                 });
             }
         });
-    });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
 });
+
+
 
 
 let currentIndex = 0;
@@ -218,7 +222,388 @@ function createDots() {
     updateDots();
 }
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdownButton = document.querySelector(".mobile");
+    const cancelButton = document.getElementById("cancel-button");
+    const dropdownContent = document.getElementById("dropdown-content");
+
+    // Ensure the dropdown menu is hidden initially
+    dropdownContent.classList.add("hidden");
+
+    // Show dropdown with sliding effect when the menu is clicked
+    dropdownButton.addEventListener("click", () => {
+        dropdownContent.classList.remove("hidden"); // Show the element
+        setTimeout(() => {
+            dropdownContent.classList.add("active"); // Trigger the sliding animation
+        }, 10); // Small delay to allow for the display update
+    });
+
+    // Hide dropdown with sliding effect when the cancel button is clicked
+    cancelButton.addEventListener("click", () => {
+        dropdownContent.classList.remove("active"); // Trigger the slide-out animation
+        setTimeout(() => {
+            dropdownContent.classList.add("hidden"); // Hide the element after the animation
+        }, 2000); // Duration matches the CSS transition (0.3s)
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    function checkVisibility() {
+        portfolioItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const triggerHeight = window.innerHeight * 0.8; // 80% of the viewport height
+
+            if (rect.top < triggerHeight) {
+                item.classList.add('show');
+            }
+        });
+    }
+
+    // Check visibility on scroll and on page load
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+});
+
+
+// document.querySelector('.mobile img').addEventListener('click', function() {
+// document.getElementById('dropdownn-content').classList.toggle('hidden');
+
+// });
 document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const loadMoreButton = document.getElementById('loadMore');
+    const portfolioContainer = document.querySelector('.portfolio-items');
+    
+    let visibleItemsCount = 6;
+  
+    function filterItems(filter) {
+      portfolioItems.forEach(item => {
+        if (filter === 'all' || item.classList.contains(filter)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        filterItems(filter);
+      });
+    });
+  
+    loadMoreButton.addEventListener('click', () => {
+      const items = Array.from(portfolioItems);
+      for (let i = visibleItemsCount; i < visibleItemsCount + 6; i++) {
+        if (items[i]) {
+          items[i].style.display = 'block';
+        }
+      }
+      visibleItemsCount += 6;
+    });
+  
+    // Initially hide items beyond the first 6
+    portfolioItems.forEach((item, index) => {
+      if (index >= visibleItemsCount) {
+        item.style.display = 'none';
+      }
+    });
+  });
+  
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const slides = document.querySelectorAll('.carousel__item');
+//     const nextBtn = document.querySelector('.carousel__control.right');
+//     const prevBtn = document.querySelector('.carousel__control.left');
+
+//     let currentIndex = 0;
+
+//     function updateCarousel() {
+//         slides.forEach((slide, index) => {
+//             slide.classList.remove('active');
+//             if (index === currentIndex) {
+//                 slide.classList.add('active');
+//             }
+//         });
+
+//         const offset = -currentIndex * slides[0].offsetWidth;
+//         document.querySelector('.carousel__inner').style.transform = `translateX(${offset}px)`;
+
+//         // Add event listener to the active slide
+//         slides.forEach(slide => slide.removeEventListener('click', goToServicePage)); // Remove previous listeners
+//         slides[currentIndex].addEventListener('click', goToServicePage);
+//     }
+
+//     function goToNextSlide() {
+//         currentIndex = (currentIndex + 1) % slides.length;
+//         updateCarousel();
+//     }
+
+//     function goToPreviousSlide() {
+//         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+//         updateCarousel();
+//     }
+
+//     function goToServicePage() {
+//         window.location.href = '/html/service.html';
+//     }
+
+//     // Event listeners for manual control
+//     nextBtn.addEventListener('click', goToNextSlide);
+//     prevBtn.addEventListener('click', goToPreviousSlide);
+
+//     // Initialize the carousel
+//     updateCarousel();
+
+//     // Auto-scroll every 10 seconds (10,000 milliseconds)
+//     setInterval(goToNextSlide, 10000);
+// });  
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const btnHeaderButtons = document.querySelectorAll(".btnheader .filter-btn");
+    const portfolioGalleryButtons = document.querySelectorAll(".portfolio-gallery .filter-btn");
+    const portfolioFilter = document.getElementById("portfolio-filter");
+  
+    // Function to update the visibility of .portfolio-gallery buttons based on the active filter
+    function updatePortfolioGalleryButtons(activeFilter) {
+      portfolioGalleryButtons.forEach(button => {
+        if (activeFilter === "all") {
+          button.style.display = button.getAttribute("data-filter") === "all" ? "block" : "none"; // Show only "All"
+        } else if (button.getAttribute("data-filter") === activeFilter) {
+          button.style.display = "block"; // Show button matching filter
+        } else {
+          button.style.display = "none"; // Hide other buttons
+        }
+      });
+    }
+  
+    // Function to handle button clicks in .btnheader
+    function handleButtonClick(event) {
+      const filter = event.target.getAttribute("data-filter");
+  
+      // Update the button styles in .btnheader
+      btnHeaderButtons.forEach(btn => {
+        btn.classList.remove("active"); // Remove active class from all buttons
+      });
+      event.target.classList.add("active"); // Add active class to the clicked button
+  
+      // Update the visibility of .portfolio-gallery buttons based on the active filter
+      updatePortfolioGalleryButtons(filter);
+    }
+  
+    // Attach click event listeners to filter buttons
+    btnHeaderButtons.forEach(button => {
+      button.addEventListener("click", handleButtonClick);
+    });
+  
+    // Handle click on the portfolio anchor to filter only the "All" button
+    portfolioFilter.addEventListener("click", function() {
+      // Show only the "All" button in the .portfolio-gallery
+      updatePortfolioGalleryButtons("all");
+  
+      // Optionally, remove active class from other buttons in .btnheader
+      btnHeaderButtons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+    });
+  
+    // Optionally, click the "All" button to show all items by default
+    document.querySelector('.btnheader .filter-btn[data-filter="all"]').click();
+  });
+  
+  
+
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    let itemsPerPage = 6;
+    let currentItems = 0;
+    let currentFilter = 'all';
+  
+    function showItems(filter) {
+      let items = document.querySelectorAll('.portfolio-item');
+      items.forEach(item => item.style.display = 'none'); // Hide all items
+      let filteredItems = [...items].filter(item => filter === 'all' || item.getAttribute('data-project') === filter);
+      filteredItems.slice(0, itemsPerPage).forEach(item => item.style.display = 'block'); // Show the first 6 items
+      currentItems = itemsPerPage;
+      currentFilter = filter;
+  
+      if (filteredItems.length > currentItems) {
+        document.getElementById('loadMore').style.display = 'block'; // Show the Load More button if more than 6 items
+      } else {
+        document.getElementById('loadMore').style.display = 'none'; // Hide the Load More button if fewer items than 6
+      }
+    }
+  
+    // Initially show 'all' items and show the Load More button
+    showItems('all');
+  
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        let filter = this.getAttribute('data-filter');
+        showItems(filter); // Show first 6 filtered items
+        // Check if more than 6 items are in the filtered result, and show the Load More button if necessary
+      });
+    });
+  
+    document.getElementById('loadMore').addEventListener('click', function() {
+      let items = document.querySelectorAll('.portfolio-item');
+      let filteredItems = [...items].filter(item => currentFilter === 'all' || item.getAttribute('data-project') === currentFilter);
+      let remainingItems = filteredItems.slice(currentItems, currentItems + itemsPerPage);
+      remainingItems.forEach(item => item.style.display = 'block'); // Show the next 6 items
+      currentItems += itemsPerPage;
+  
+      if (currentItems >= filteredItems.length) {
+        this.style.display = 'none'; // Hide the button when no more items
+      }
+    });
+  });
+  
+  
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+
+        fetch('contact.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log('Response:', data); // Log the server response
+            if (data.startsWith('success')) {
+                alert("Message sent successfully!");
+                form.reset(); // Optionally reset the form
+            } else {
+                alert("There was an issue sending your message. Please try again.");
+            }
+        })
+        .catch(error => {
+            alert("An error occurred. Please try again.");
+            console.error('Error:', error);
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleservice = document.querySelectorAll('.toggleservice span');
+    const carouselItems = document.querySelectorAll('.carousel__item');
+  
+    toggleservice.forEach((toggle, index) => {
+      toggle.addEventListener('click', () => {
+        // Remove active class from all toggles
+        toggleservice.forEach(span => span.classList.remove('active'));
+        // Add active class to clicked toggle
+        toggle.classList.add('active');
+  
+        // Show corresponding carousel item
+        carouselItems.forEach((item, itemIndex) => {
+          item.style.display = itemIndex === index ? 'block' : 'none';
+        });
+      });
+    });
+  
+    // Set default active section (Masterplanning)
+    const defaultIndex = 0; // Change this to the index you want active by default
+    toggleservice[defaultIndex].click();
+  });
+
+
+
+  
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleservice = document.querySelectorAll('.toggleservice span');
+    const carouselItems = document.querySelectorAll('.carousel__item');
+  
+    toggleservice.forEach((toggle, index) => {
+      toggle.addEventListener('click', () => {
+        // Remove active class from all toggles
+        toggleservice.forEach(span => span.classList.remove('active'));
+        // Add active class to clicked toggle
+        toggle.classList.add('active');
+  
+        // Show corresponding carousel item
+        carouselItems.forEach((item, itemIndex) => {
+          item.style.display = itemIndex === index ? 'block' : 'none';
+        });
+      });
+    });
+  
+    // Set default active section (Masterplanning)
+    const defaultIndex = 0; // Change this to the index you want active by default
+    toggleservice[defaultIndex].click();
+  });
+
+
+
+
+let slideIndex = 1;
+
+function openHighlight() {
+  document.getElementById("highlight-section").style.display = "flex";
+  showSlides(slideIndex);
+}
+
+function closeHighlight() {
+  document.getElementById("highlight-section").style.display = "none";
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("highlight-slide");
+  let indicators = document.getElementsByClassName("indicator");
+  
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  
+  for (let i = 0; i < indicators.length; i++) {
+    indicators[i].className = indicators[i].className.replace(" active", "");
+  }
+  
+  slides[slideIndex-1].style.display = "block";  
+  indicators[slideIndex-1].className += " active";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');  // Select all elements with the nav-link class
+    const currentPath = window.location.pathname;  // Get the current path
+  
+    navLinks.forEach(link => {
+      // Check if the href of the link matches the current path or is the index ("/")
+      if (link.getAttribute('href') === currentPath || currentPath === '/') {
+        link.classList.add('active');  // Add active class to the matching link
+      }
+    });
+  });
+  
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
     const projects = {
         'project1': [
             '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
@@ -531,304 +916,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const dropdownButton = document.querySelector(".mobile");
-    const cancelButton = document.getElementById("cancel-button");
-    const dropdownContent = document.getElementById("dropdown-content");
-
-    // Ensure the dropdown menu is hidden initially
-    dropdownContent.classList.add("hidden");
-
-    // Show dropdown with sliding effect when the menu is clicked
-    dropdownButton.addEventListener("click", () => {
-        dropdownContent.classList.remove("hidden"); // Show the element
-        setTimeout(() => {
-            dropdownContent.classList.add("active"); // Trigger the sliding animation
-        }, 10); // Small delay to allow for the display update
-    });
-
-    // Hide dropdown with sliding effect when the cancel button is clicked
-    cancelButton.addEventListener("click", () => {
-        dropdownContent.classList.remove("active"); // Trigger the slide-out animation
-        setTimeout(() => {
-            dropdownContent.classList.add("hidden"); // Hide the element after the animation
-        }, 2000); // Duration matches the CSS transition (0.3s)
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    function checkVisibility() {
-        portfolioItems.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            const triggerHeight = window.innerHeight * 0.8; // 80% of the viewport height
-
-            if (rect.top < triggerHeight) {
-                item.classList.add('show');
-            }
-        });
-    }
-
-    // Check visibility on scroll and on page load
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility();
-});
-
-
-// document.querySelector('.mobile img').addEventListener('click', function() {
-// document.getElementById('dropdownn-content').classList.toggle('hidden');
-
-// });
 document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const loadMoreButton = document.getElementById('loadMore');
-    const portfolioContainer = document.querySelector('.portfolio-items');
-    
-    let visibleItemsCount = 6;
-  
-    function filterItems(filter) {
-      portfolioItems.forEach(item => {
-        if (filter === 'all' || item.classList.contains(filter)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-  
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterItems(filter);
-      });
-    });
-  
-    loadMoreButton.addEventListener('click', () => {
-      const items = Array.from(portfolioItems);
-      for (let i = visibleItemsCount; i < visibleItemsCount + 6; i++) {
-        if (items[i]) {
-          items[i].style.display = 'block';
-        }
-      }
-      visibleItemsCount += 6;
-    });
-  
-    // Initially hide items beyond the first 6
-    portfolioItems.forEach((item, index) => {
-      if (index >= visibleItemsCount) {
-        item.style.display = 'none';
-      }
-    });
-  });
-  
-  
-document.addEventListener("DOMContentLoaded", function () {
+    let lastScrollPosition = 0;  // Store the last scroll position
+    const scrollThreshold = 500; // Set the threshold to 500px
+
     window.addEventListener('scroll', function () {
-        // Get all sections by ID
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav ul div a');
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        let currentSection = '';
-
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            // Check if the current scroll position is within the section
-            if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute('id'); // Get the section's ID
-            }
-        });
-
-        // Remove active class from all links and then add it to the current one
-        navLinks.forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.carousel__item');
-    const nextBtn = document.querySelector('.carousel__control.right');
-    const prevBtn = document.querySelector('.carousel__control.left');
-
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            if (index === currentIndex) {
-                slide.classList.add('active');
-            }
-        });
-
-        const offset = -currentIndex * slides[0].offsetWidth;
-        document.querySelector('.carousel__inner').style.transform = `translateX(${offset}px)`;
-
-        // Add event listener to the active slide
-        slides.forEach(slide => slide.removeEventListener('click', goToServicePage)); // Remove previous listeners
-        slides[currentIndex].addEventListener('click', goToServicePage);
-    }
-
-    function goToNextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-    }
-
-    function goToPreviousSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
-    }
-
-    function goToServicePage() {
-        window.location.href = '/html/service.html';
-    }
-
-    // Event listeners for manual control
-    nextBtn.addEventListener('click', goToNextSlide);
-    prevBtn.addEventListener('click', goToPreviousSlide);
-
-    // Initialize the carousel
-    updateCarousel();
-
-    // Auto-scroll every 10 seconds (10,000 milliseconds)
-    setInterval(goToNextSlide, 10000);
-});  
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const btnHeaderButtons = document.querySelectorAll(".btnheader .filter-btn");
-    const portfolioGalleryButtons = document.querySelectorAll(".portfolio-gallery .filter-btn");
-    const portfolioFilter = document.getElementById("portfolio-filter");
-  
-    // Function to update the visibility of .portfolio-gallery buttons based on the active filter
-    function updatePortfolioGalleryButtons(activeFilter) {
-      portfolioGalleryButtons.forEach(button => {
-        if (activeFilter === "all") {
-          button.style.display = button.getAttribute("data-filter") === "all" ? "block" : "none"; // Show only "All"
-        } else if (button.getAttribute("data-filter") === activeFilter) {
-          button.style.display = "block"; // Show button matching filter
-        } else {
-          button.style.display = "none"; // Hide other buttons
-        }
-      });
-    }
-  
-    // Function to handle button clicks in .btnheader
-    function handleButtonClick(event) {
-      const filter = event.target.getAttribute("data-filter");
-  
-      // Update the button styles in .btnheader
-      btnHeaderButtons.forEach(btn => {
-        btn.classList.remove("active"); // Remove active class from all buttons
-      });
-      event.target.classList.add("active"); // Add active class to the clicked button
-  
-      // Update the visibility of .portfolio-gallery buttons based on the active filter
-      updatePortfolioGalleryButtons(filter);
-    }
-  
-    // Attach click event listeners to filter buttons
-    btnHeaderButtons.forEach(button => {
-      button.addEventListener("click", handleButtonClick);
-    });
-  
-    // Handle click on the portfolio anchor to filter only the "All" button
-    portfolioFilter.addEventListener("click", function() {
-      // Show only the "All" button in the .portfolio-gallery
-      updatePortfolioGalleryButtons("all");
-  
-      // Optionally, remove active class from other buttons in .btnheader
-      btnHeaderButtons.forEach(btn => {
-        btn.classList.remove("active");
-      });
-    });
-  
-    // Optionally, click the "All" button to show all items by default
-    document.querySelector('.btnheader .filter-btn[data-filter="all"]').click();
-  });
-  
-  
-
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    let itemsPerPage = 6;
-    let currentItems = 0;
-    let currentFilter = 'all';
-  
-    function showItems(filter) {
-      let items = document.querySelectorAll('.portfolio-item');
-      items.forEach(item => item.style.display = 'none'); // Hide all items
-      let filteredItems = [...items].filter(item => filter === 'all' || item.getAttribute('data-project') === filter);
-      filteredItems.slice(0, itemsPerPage).forEach(item => item.style.display = 'block'); // Show the first 6 items
-      currentItems = itemsPerPage;
-      currentFilter = filter;
-  
-      if (filteredItems.length > currentItems) {
-        document.getElementById('loadMore').style.display = 'block'; // Show the Load More button if more than 6 items
-      } else {
-        document.getElementById('loadMore').style.display = 'none'; // Hide the Load More button if fewer items than 6
-      }
-    }
-  
-    // Initially show 'all' items and show the Load More button
-    showItems('all');
-  
-    document.querySelectorAll('.filter-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        let filter = this.getAttribute('data-filter');
-        showItems(filter); // Show first 6 filtered items
-        // Check if more than 6 items are in the filtered result, and show the Load More button if necessary
-      });
-    });
-  
-    document.getElementById('loadMore').addEventListener('click', function() {
-      let items = document.querySelectorAll('.portfolio-item');
-      let filteredItems = [...items].filter(item => currentFilter === 'all' || item.getAttribute('data-project') === currentFilter);
-      let remainingItems = filteredItems.slice(currentItems, currentItems + itemsPerPage);
-      remainingItems.forEach(item => item.style.display = 'block'); // Show the next 6 items
-      currentItems += itemsPerPage;
-  
-      if (currentItems >= filteredItems.length) {
-        this.style.display = 'none'; // Hide the button when no more items
-      }
-    });
-  });
-  
-  
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        const formData = new FormData(form);
-
-        fetch('contact.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log('Response:', data); // Log the server response
-            if (data.startsWith('success')) {
-                alert("Message sent successfully!");
-                form.reset(); // Optionally reset the form
+        // Only start hiding the header after scrolling down 500px
+        if (currentScroll > scrollThreshold) {
+            // Check if scrolling down
+            if (currentScroll > lastScrollPosition) {
+                // Scrolling down - hide the header
+                document.getElementById('header').style.top = '-100px';  // Adjust based on your header height
             } else {
-                alert("There was an issue sending your message. Please try again.");
+                // Scrolling up - show the header
+                document.getElementById('header').style.top = '0';
             }
-        })
-        .catch(error => {
-            alert("An error occurred. Please try again.");
-            console.error('Error:', error);
-        });
+        }
+
+        // Update the last scroll position to the current one
+        lastScrollPosition = currentScroll;
     });
 });
