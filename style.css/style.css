@@ -374,6 +374,14 @@ html {
     margin-top: 15vh;
   }
 
+  .huhh ul .huh {
+    flex-direction: column;
+  }
+  
+  html body #header .dropdown-content {
+    display: flex;
+  }
+
   .dropdownn-content {
     display: none;
     position: absolute;
@@ -631,7 +639,7 @@ html {
 .huh {
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
 }
 
@@ -813,6 +821,7 @@ li {
 /* Dropdown content styling */
 .dropdown-content {
   flex-direction: column;
+  display: none;
   background-color: #f9f9f9;
   border: 1px solid #faf8f8;
   z-index: 1;
