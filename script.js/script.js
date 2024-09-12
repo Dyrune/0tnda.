@@ -606,7 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const projects = {
         'project1': [
-            '/IMG/8e2d92612b109a68a102bc10b4a83c04.jpg',
+            '/IMG/images/3D\ 1.png',
             '/IMG/pexels-efrem-efre-2786187-19509322.jpg',
             '/IMG/pexels-pixabay-262367.jpg',
         ],
@@ -918,7 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     let lastScrollPosition = 0;  // Store the last scroll position
-    const scrollThreshold = 500; // Set the threshold to 500px
+    const scrollThreshold = 800; // Set the threshold to 500px
 
     window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;

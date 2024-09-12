@@ -1,6 +1,6 @@
 .portfolio {
   padding: 30px 0;
-  background-color: #f4f4f4;
+  background-color: rgba(18, 0, 34, 0.877);
 }
 
 #home {
@@ -8,7 +8,6 @@
 }
 
 .filter-btn {
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -19,7 +18,8 @@
 }
 
 .filter-btn.active {
-  border-bottom: 2px solid #313030;
+  border-bottom: 2px solid chocolate;
+  color: chocolate;
 }
 
 .project-info {
@@ -33,6 +33,30 @@
   text-align: center;
   transform: translateY(100%);
   transition: transform 0.3s ease;
+}
+
+.selec b {
+  color: chocolate;
+  margin-right: 10px;
+}
+
+.infopro div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.infopro div h2 {
+  padding-right: 20px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.infopro div p {
+  color: chocolate;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  padding-top: 5px;
 }
 
 body,
@@ -69,12 +93,7 @@ html {
   text-shadow: 1px 3px 3px #555;
 }
 
-.selec {
-  font-size: 32px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
+
 
 .slides {
   display: flex;
@@ -115,24 +134,29 @@ html {
 }
 
 .pla {
-  background-color: #e4e4e4;
+  background-color: rgba(18, 0, 34, 0.877);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   padding: 5px;
+  color: white;
 }
 
-.btnheader button {
-  margin: 5px 10px;
+#grril .pla div a {
+  margin: 0;
 }
 
 .pla div:first-child {
-  padding: 12px;
+  padding: 10px;
   border-radius: 5px;
   color: white;
-  background-color: black;
+  background-color: chocolate;
+}
+
+.pla .btnheader {
+  display: flex;
 }
 
 .show-more {
@@ -170,7 +194,7 @@ html {
 }
 
 #services {
-  margin-top: 20vh;
+  margin-top: 10vh;
   margin-bottom: 20vh;
 }
 
@@ -203,15 +227,6 @@ html {
 }
 
 
-@media (min-width: 1101px) {
-  .portfolio-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-    gap: 80px;
-    padding: 70px;
-  }
-
-
   .Notepad {
     margin-top: 25vh;
     color: black;
@@ -223,24 +238,80 @@ html {
     font-weight: bolder;
   }
 
+
+@media (min-width: 1101px) {
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 80px;
+    padding: 70px;
+  }
+
 }
 
+@media (max-width: 950px) {
+  #services .container .toggleservice span {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .content-container {
+    flex-direction: column;
+  }
+
+  .content-container .text-column {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .carousel__item #masterplanning .container .content-container .image-column {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .carousel__item #masterplanning .container .content-container .image-column img {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 950px) {
+  body #about .container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  body #about .container .about-text {
+    width: 90%;
+    margin: 5%;
+    padding: 0;
+  }
+
+  .context button {
+    margin-left: 55px;
+  }
+
+  body #about .container .about-img {
+    width: 100%;
+  }
+
+  body #about .container .about-img img {
+    width: 90%;
+  }
+}
 
 @media (max-width: 1100px) {
   .portfolio-items {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
   }
-
-  .about-img img {
-    width: 40vh;
-    height: auto;
-  }
-
-  .about-img {
-    position: absolute;
-    top: 110vh;
-    right: 8%;
+  
+  #header .container {
+    padding: 10px 0;
   }
 
   .ic {
@@ -248,7 +319,61 @@ html {
   }
 }
 
+@media (max-width: 630px) {
+
+  #services .container .toggleservice {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #services .container .toggleservice span {
+    flex-wrap: wrap;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .Notepad {
+  font-size: 30px;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 70%;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  html body #services {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+  html body #services h2 {
+    margin-bottom: 10px;
+  }
+
+  html body #about h2 {
+    margin-left: 4vh;
+  }
+
+  html body #about .context button {
+    margin-left: 2vh;
+  }
+}
+
+
 @media (max-width: 768px) {
+
+  .contentcontainer .contactcontent {
+    margin-top: 15vh;
+  }
+
   .dropdownn-content {
     display: none;
     position: absolute;
@@ -258,20 +383,37 @@ html {
     right: 80px;
   }
 
+  form .form-group input {
+    width: 300px;
+  }
+
+  html body #header .container {
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  html body .hero {
+    height: auto;
+  }
+
   .dropdownn-content a {
     color: black;
     text-decoration: none;
     margin: 0;
   }
 
+  .huhh ul {
+    padding-left: 20px;
+  }
+
+  .huhh .huh div {
+    margin-top: 30px;
+  }
+
   .huhh div a {
     text-decoration: none;
     font-size: 22px;
     color: #313030;
-  }
-
-  .dropdown-content .huhh div {
-    padding: 20px;
   }
 
   .huhh {
@@ -307,6 +449,20 @@ html {
     grid-template-columns: 1fr;
   }
 
+  #dropdown-content div nav ul .huh {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .iconlinks span hr {
+    display: none;
+  }
+
+  .iconlinks span img {
+    width: 30px;
+    padding: 15px;
+  }
+
   .ic {
     display: none;
   }
@@ -318,6 +474,18 @@ html {
     font-size: 25px;
     color: white;
     cursor: pointer;
+  }
+
+  .slider .slides .slide {
+    height: 50vh;
+  }
+
+  html body #home .slider .dots {
+    bottom: 0;
+  }
+
+  #header .container .mobile h3{
+    margin: 15px 0px;
   }
 
   #header .container .mobile {
@@ -340,6 +508,9 @@ html {
     align-items: center;
   }
 
+  .text-column .highlight-button {
+    padding: 15px 20px;
+  }
 
   .mobile img {
     padding: 10px;
@@ -352,8 +523,10 @@ html {
 }
 
 .filter-btn {
+  color: white;
+  margin: 0 10px;
   border: none;
-  font-size: 22px;
+  font-size: 18px;
   background-color: transparent;
 }
 
@@ -367,8 +540,17 @@ html {
 
 .btnheader .filter-btn.active {
   color: black;
+  color: chocolate;
   padding: 10px;
   border-bottom: 4px solid chocolate; 
+}
+
+#services .container h2 b {
+  color: chocolate;
+}
+
+.btnheader .filter-btn:hover {
+  color: chocolate;
 }
 
 .portfolio-gallery {
@@ -449,14 +631,14 @@ html {
 .huh {
   justify-content: center;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #header .container {
-  margin: 0 15vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .container nav ul {
@@ -554,6 +736,10 @@ li {
   gap: 10px;
 }
 
+#dropdown-content #cancel-button h3 {
+  font-size: 18px;
+}
+
 .lightbox-dot {
   width: 15px;
   height: 15px;
@@ -600,8 +786,8 @@ li {
 }
 
 .cancel-button img {
-  height: 25px;
-  padding: 10px;
+  height: 20px;
+  padding: 5px;
 }
 
 .dropdown div:first-child {
@@ -673,11 +859,12 @@ li {
 }
 
 form button {
-  width: 35%;
-  height: 5vh;
-  margin: 15px;
+  padding: 14px 20px;
+  margin-top: 10px;
   border: none;
-  background-color: chocolate;
+  font-family: monospace;
+  font-size: 18px;
+  background-color: rgba(18, 0, 34, 0.877);
   border-radius: 10px;
   color: white;
 }
@@ -697,7 +884,7 @@ form button {
 }
 
 footer {
-  background-color: chocolate;
+  background-color: rgba(18, 0, 34, 0.877);
   color: white;
   height: 20vh;
 }
@@ -740,8 +927,16 @@ nav ul li div a {
   float: right;
 }
 
+.selec {
+  font-size: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  color: white;
+}
 
 .portfolio-item {
+  color: chocolate;
   overflow: hidden;
   width: 100%;
   position: relative;
@@ -751,6 +946,16 @@ nav ul li div a {
   display: none; /* Initially hide all images */
   opacity: 0;
   animation: slideIn 1.5s forwards;
+}
+
+.portfolio-item span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 15px;
+  font-size: 22px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #loadMoree {
@@ -770,8 +975,7 @@ nav ul li div a {
 }
 
 #loadMoree:hover {
-  background-color: black;
-  box-shadow: 0 8px 16px 0 chocolate;
+  box-shadow: 0 4px 8px 0 white;
   cursor: pointer;
   color: white;
 }
@@ -808,21 +1012,28 @@ nav ul li div a {
 }
 
 #mess button:hover {
-  box-shadow: 0 8px 16px 0 chocolate;
+  color: chocolate;
+  box-shadow: 0 2px 8px 0 chocolate;
   cursor: pointer;
-  background-color: transparent;
-  color: black;
 }
 
 .about-img img {
-  width: 55vh;
+  width: 50%;
   height: auto;
 }
 
 .about-text {
   display: flex;
   width: 45%;
+  padding-left: 5vh;
   margin-top: 20px;
+}
+
+#about {
+  background-color: rgba(18, 0, 34, 0.877);
+  color: white;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
 }
 
 .about-img {
@@ -834,10 +1045,10 @@ nav ul li div a {
 
 #about h2 {
   font-family: monospace;
-  font-size: 42px;
+  font-size: 36px;
   display: block;
   margin-left: 10vh;
-  padding: 20px 0px;
+  padding: 0px 0px;
   font-weight: bolder;
 }
 
@@ -849,8 +1060,8 @@ nav ul li div a {
 }
 
 .context {
-  font-size: 24px;
-  font-family: sans-serif;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -880,26 +1091,29 @@ nav ul li div a {
 
 .context button a {
   text-decoration: none;
-  color: rgb(160, 70, 5);
+  color: white;
+}
+
+.context button:hover a {
+  color: white;
 }
 
 .context button {
   width: 180px;
-  box-shadow: 0 8px 16px 0 #7e807e;
+  background-color: black;
   height: 50px;
   padding: 10px;
   font-size: 18px;
   margin-top: 10px;
   border: none;
+  background-color: chocolate;
   border-radius: 10px;
-  background-color: transparent;
-  color: black;
+  color: white;
   font-weight: bolder;
 }
 
 .context button:hover {
-  background-color: chocolate;
-  color: white;
+  box-shadow: 0 4px 8px 0 white;
   cursor: pointer;
 }
 
@@ -908,6 +1122,7 @@ nav ul li div a {
   font-family: monospace;
   font-size: 26px;
   display: block;
+  color: rgba(18, 0, 34, 0.877);
 }
 
 .serv {
@@ -984,27 +1199,22 @@ nav ul li div a {
   border-radius: 15px;
   margin-top: 20vh;
   display: flex;
-  width: 35%;
   flex-direction: column;
   margin-bottom: 7vh;
 }
 
 .form-group {
-  width: 80%;
-  margin: 5%;
-  margin-left: 10%;
-  margin-bottom: 7%;
+  padding: 10px 30px;
   display: flex;
   align-items: flex-start;
 }
 
 .form-group input {
-  width: 320px;
-  height: 40px;
   border: none;
   box-shadow: 0 4px 8px 0 #555;
   border-radius: 10px;
-  padding: 0px 10px;
+  padding: 17px 10px;
+  margin-top: 10px;
 }
 
 input:hover {
@@ -1033,12 +1243,12 @@ input:hover {
 }
 
 #message textarea {
-  width: 400px;
-  height: 40px;
   border: none;
   box-shadow: 0 4px 8px 0 #555;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px 10px;
+  width: 280px;
+  margin-top: 10px;
 }
 
 #message textarea:hover {
@@ -1061,7 +1271,6 @@ input:hover {
 }
 
 #mess {
-  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1320,7 +1529,7 @@ footer div:first-child {
 }
 
 .text-column {
-  padding: 30px 10px;
+  padding: 10px 10px;
 }
 
 .text-column p {
@@ -1584,18 +1793,18 @@ button.projhighlight {
 
 .highlight-button {
   font-size: 18px;
-  padding: 10px;
+  padding: 15px;
   background-color: transparent;
+  margin-top: 5px;
   border: none;
   border-radius: 5px;
   background-color: chocolate;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
 .highlight-button:hover {
-  box-shadow: 0 8px 16px 0 chocolate;
-  background-color: transparent;
+  box-shadow: 0 8px 16px 0 rgba(18, 0, 34, 0.877);
   color: black;
 }
 
@@ -1683,18 +1892,21 @@ button.projhighlight {
 
 .toggleservice span {
   cursor: pointer;
+  font-weight: bolder;
   padding: 30px;
   color: chocolate;
+  font-size: 22px;
+  font-family: cursive;
 }
 
 .toggleservice span:hover {
   cursor: pointer;
   font-weight: bolder;
+  color: rgba(18, 0, 34, 0.877);
+  text-shadow: 2px 4px 4px rgba(18, 0, 34, 0.877);
 }
 
 .toggleservice {
-  font-size: 22px;
-  font-family: cursive;
   margin-top: 20px;
   margin-bottom: 20px;
 }
