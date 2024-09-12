@@ -51,7 +51,60 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Document loaded and ready.');
 
+    // Smooth Scroll for Navigation
+    document.querySelectorAll('.huh div a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+
+            // Ensure that the element exists before trying to scroll
+            if (target) {
+                // Adjust for fixed headers if necessary
+                const offset = target.offsetTop - document.querySelector('#header').offsetHeight;
+
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // IntersectionObserver for section highlighting
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.huh div a'); // Select all nav links
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Adjust as needed
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sectionId = entry.target.getAttribute('id');
+                
+                // Loop through all nav items and apply/remove the active class
+                navItems.forEach(item => {
+                    if (item.getAttribute('href') === `#${sectionId}`) {
+                        item.classList.add('active');  // Add 'active' class to the matched link
+                    } else {
+                        item.classList.remove('active');  // Remove 'active' from others
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    
+});
 
 
 let currentIndex = 0;
