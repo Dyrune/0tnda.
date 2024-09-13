@@ -562,7 +562,7 @@ function openHighlight() {
   
     // Only show the highlight section for the active carousel item
     if (highlightSection) {
-      highlightSection.style.display = 'block';
+      highlightSection.style.display = 'flex';
     }
   }
   
@@ -608,11 +608,38 @@ function openHighlight() {
     indicators.forEach(indicator => { indicator.className = indicator.className.replace(' active', ''); });
     
     // Show the current slide
-    slides[slideIndex - 1].style.display = 'block';
+    slides[slideIndex - 1].style.display = 'flex';
     
     // Highlight the current indicator
     indicators[slideIndex - 1].className += ' active';
-  }
+}
+  
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all toggle buttons and carousel items
+    const toggles = document.querySelectorAll('.toggleservice span');
+    const carouselItems = document.querySelectorAll('.carousel__item');
+    
+    // Function to switch active class and display
+    function switchService(index) {
+      // Remove active class from all toggles and hide all carousel items
+      toggles.forEach(toggle => toggle.classList.remove('active'));
+      carouselItems.forEach(item => item.style.display = 'none');
+      
+      // Add active class to clicked toggle and show corresponding carousel item
+      toggles[index].classList.add('active');
+      carouselItems[index].style.display = 'block';
+    }
+  
+    // Attach click event to each toggle
+    toggles.forEach((toggle, index) => {
+      toggle.addEventListener('click', function () {
+        switchService(index);
+      });
+    });
+    
+    // Initially display the first carousel item
+    switchService(0);
+});
   
 
 
