@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const sectionId = entry.target.getAttribute('id');
-                
+
                 // Loop through all nav items and apply/remove the active class
                 navItems.forEach(item => {
                     if (item.getAttribute('href') === `#${sectionId}`) {
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Document loaded and ready.');
@@ -81,14 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5 // Adjust as needed
+        threshold: 0.2 // Adjust as needed
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const sectionId = entry.target.getAttribute('id');
-                
+
                 // Loop through all nav items and apply/remove the active class
                 navItems.forEach(item => {
                     if (item.getAttribute('href') === `#${sectionId}`) {
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => observer.observe(section));
 
-    
+
 });
 
 
@@ -331,44 +332,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     const loadMoreButton = document.getElementById('loadMore');
     const portfolioContainer = document.querySelector('.portfolio-items');
-    
+
     let visibleItemsCount = 6;
-  
+
     function filterItems(filter) {
-      portfolioItems.forEach(item => {
-        if (filter === 'all' || item.classList.contains(filter)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+        portfolioItems.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
     }
-  
+
     filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterItems(filter);
-      });
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            filterItems(filter);
+        });
     });
-  
+
     loadMoreButton.addEventListener('click', () => {
-      const items = Array.from(portfolioItems);
-      for (let i = visibleItemsCount; i < visibleItemsCount + 6; i++) {
-        if (items[i]) {
-          items[i].style.display = 'block';
+        const items = Array.from(portfolioItems);
+        for (let i = visibleItemsCount; i < visibleItemsCount + 6; i++) {
+            if (items[i]) {
+                items[i].style.display = 'block';
+            }
         }
-      }
-      visibleItemsCount += 6;
+        visibleItemsCount += 6;
     });
-  
+
     // Initially hide items beyond the first 6
     portfolioItems.forEach((item, index) => {
-      if (index >= visibleItemsCount) {
-        item.style.display = 'none';
-      }
+        if (index >= visibleItemsCount) {
+            item.style.display = 'none';
+        }
     });
-  });
-  
+});
+
 
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -421,110 +422,110 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const btnHeaderButtons = document.querySelectorAll(".btnheader .filter-btn");
     const portfolioGalleryButtons = document.querySelectorAll(".portfolio-gallery .filter-btn");
     const portfolioFilter = document.getElementById("portfolio-filter");
-  
+
     // Function to update the visibility of .portfolio-gallery buttons based on the active filter
     function updatePortfolioGalleryButtons(activeFilter) {
-      portfolioGalleryButtons.forEach(button => {
-        if (activeFilter === "all") {
-          button.style.display = button.getAttribute("data-filter") === "all" ? "block" : "none"; // Show only "All"
-        } else if (button.getAttribute("data-filter") === activeFilter) {
-          button.style.display = "block"; // Show button matching filter
-        } else {
-          button.style.display = "none"; // Hide other buttons
-        }
-      });
+        portfolioGalleryButtons.forEach(button => {
+            if (activeFilter === "all") {
+                button.style.display = button.getAttribute("data-filter") === "all" ? "block" : "none"; // Show only "All"
+            } else if (button.getAttribute("data-filter") === activeFilter) {
+                button.style.display = "block"; // Show button matching filter
+            } else {
+                button.style.display = "none"; // Hide other buttons
+            }
+        });
     }
-  
+
     // Function to handle button clicks in .btnheader
     function handleButtonClick(event) {
-      const filter = event.target.getAttribute("data-filter");
-  
-      // Update the button styles in .btnheader
-      btnHeaderButtons.forEach(btn => {
-        btn.classList.remove("active"); // Remove active class from all buttons
-      });
-      event.target.classList.add("active"); // Add active class to the clicked button
-  
-      // Update the visibility of .portfolio-gallery buttons based on the active filter
-      updatePortfolioGalleryButtons(filter);
+        const filter = event.target.getAttribute("data-filter");
+
+        // Update the button styles in .btnheader
+        btnHeaderButtons.forEach(btn => {
+            btn.classList.remove("active"); // Remove active class from all buttons
+        });
+        event.target.classList.add("active"); // Add active class to the clicked button
+
+        // Update the visibility of .portfolio-gallery buttons based on the active filter
+        updatePortfolioGalleryButtons(filter);
     }
-  
+
     // Attach click event listeners to filter buttons
     btnHeaderButtons.forEach(button => {
-      button.addEventListener("click", handleButtonClick);
+        button.addEventListener("click", handleButtonClick);
     });
-  
+
     // Handle click on the portfolio anchor to filter only the "All" button
-    portfolioFilter.addEventListener("click", function() {
-      // Show only the "All" button in the .portfolio-gallery
-      updatePortfolioGalleryButtons("all");
-  
-      // Optionally, remove active class from other buttons in .btnheader
-      btnHeaderButtons.forEach(btn => {
-        btn.classList.remove("active");
-      });
+    portfolioFilter.addEventListener("click", function () {
+        // Show only the "All" button in the .portfolio-gallery
+        updatePortfolioGalleryButtons("all");
+
+        // Optionally, remove active class from other buttons in .btnheader
+        btnHeaderButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
     });
-  
+
     // Optionally, click the "All" button to show all items by default
     document.querySelector('.btnheader .filter-btn[data-filter="all"]').click();
-  });
-  
-  
+});
 
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
     let itemsPerPage = 6;
     let currentItems = 0;
     let currentFilter = 'all';
-  
+
     function showItems(filter) {
-      let items = document.querySelectorAll('.portfolio-item');
-      items.forEach(item => item.style.display = 'none'); // Hide all items
-      let filteredItems = [...items].filter(item => filter === 'all' || item.getAttribute('data-project') === filter);
-      filteredItems.slice(0, itemsPerPage).forEach(item => item.style.display = 'block'); // Show the first 6 items
-      currentItems = itemsPerPage;
-      currentFilter = filter;
-  
-      if (filteredItems.length > currentItems) {
-        document.getElementById('loadMore').style.display = 'block'; // Show the Load More button if more than 6 items
-      } else {
-        document.getElementById('loadMore').style.display = 'none'; // Hide the Load More button if fewer items than 6
-      }
+        let items = document.querySelectorAll('.portfolio-item');
+        items.forEach(item => item.style.display = 'none'); // Hide all items
+        let filteredItems = [...items].filter(item => filter === 'all' || item.getAttribute('data-project') === filter);
+        filteredItems.slice(0, itemsPerPage).forEach(item => item.style.display = 'block'); // Show the first 6 items
+        currentItems = itemsPerPage;
+        currentFilter = filter;
+
+        if (filteredItems.length > currentItems) {
+            document.getElementById('loadMore').style.display = 'block'; // Show the Load More button if more than 6 items
+        } else {
+            document.getElementById('loadMore').style.display = 'none'; // Hide the Load More button if fewer items than 6
+        }
     }
-  
+
     // Initially show 'all' items and show the Load More button
     showItems('all');
-  
+
     document.querySelectorAll('.filter-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        let filter = this.getAttribute('data-filter');
-        showItems(filter); // Show first 6 filtered items
-        // Check if more than 6 items are in the filtered result, and show the Load More button if necessary
-      });
+        button.addEventListener('click', function () {
+            let filter = this.getAttribute('data-filter');
+            showItems(filter); // Show first 6 filtered items
+            // Check if more than 6 items are in the filtered result, and show the Load More button if necessary
+        });
     });
-  
-    document.getElementById('loadMore').addEventListener('click', function() {
-      let items = document.querySelectorAll('.portfolio-item');
-      let filteredItems = [...items].filter(item => currentFilter === 'all' || item.getAttribute('data-project') === currentFilter);
-      let remainingItems = filteredItems.slice(currentItems, currentItems + itemsPerPage);
-      remainingItems.forEach(item => item.style.display = 'block'); // Show the next 6 items
-      currentItems += itemsPerPage;
-  
-      if (currentItems >= filteredItems.length) {
-        this.style.display = 'none'; // Hide the button when no more items
-      }
+
+    document.getElementById('loadMore').addEventListener('click', function () {
+        let items = document.querySelectorAll('.portfolio-item');
+        let filteredItems = [...items].filter(item => currentFilter === 'all' || item.getAttribute('data-project') === currentFilter);
+        let remainingItems = filteredItems.slice(currentItems, currentItems + itemsPerPage);
+        remainingItems.forEach(item => item.style.display = 'block'); // Show the next 6 items
+        currentItems += itemsPerPage;
+
+        if (currentItems >= filteredItems.length) {
+            this.style.display = 'none'; // Hide the button when no more items
+        }
     });
-  });
-  
-  
-document.addEventListener("DOMContentLoaded", function() {
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById('contactForm');
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
         const formData = new FormData(form);
@@ -533,20 +534,20 @@ document.addEventListener("DOMContentLoaded", function() {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(data => {
-            console.log('Response:', data); // Log the server response
-            if (data.startsWith('success')) {
-                alert("Message sent successfully!");
-                form.reset(); // Optionally reset the form
-            } else {
-                alert("There was an issue sending your message. Please try again.");
-            }
-        })
-        .catch(error => {
-            alert("An error occurred. Please try again.");
-            console.error('Error:', error);
-        });
+            .then(response => response.text())
+            .then(data => {
+                console.log('Response:', data); // Log the server response
+                if (data.startsWith('success')) {
+                    alert("Message sent successfully!");
+                    form.reset(); // Optionally reset the form
+                } else {
+                    alert("There was an issue sending your message. Please try again.");
+                }
+            })
+            .catch(error => {
+                alert("An error occurred. Please try again.");
+                console.error('Error:', error);
+            });
     });
 });
 
@@ -554,51 +555,51 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
     const toggleservice = document.querySelectorAll('.toggleservice span');
     const carouselItems = document.querySelectorAll('.carousel__item');
-  
+
     toggleservice.forEach((toggle, index) => {
-      toggle.addEventListener('click', () => {
-        // Remove active class from all toggles
-        toggleservice.forEach(span => span.classList.remove('active'));
-        // Add active class to clicked toggle
-        toggle.classList.add('active');
-  
-        // Show corresponding carousel item
-        carouselItems.forEach((item, itemIndex) => {
-          item.style.display = itemIndex === index ? 'block' : 'none';
+        toggle.addEventListener('click', () => {
+            // Remove active class from all toggles
+            toggleservice.forEach(span => span.classList.remove('active'));
+            // Add active class to clicked toggle
+            toggle.classList.add('active');
+
+            // Show corresponding carousel item
+            carouselItems.forEach((item, itemIndex) => {
+                item.style.display = itemIndex === index ? 'block' : 'none';
+            });
         });
-      });
     });
-  
+
     // Set default active section (Masterplanning)
     const defaultIndex = 0; // Change this to the index you want active by default
     toggleservice[defaultIndex].click();
-  });
+});
 
 
 
-  
+
 document.addEventListener('DOMContentLoaded', function () {
     const toggleservice = document.querySelectorAll('.toggleservice span');
     const carouselItems = document.querySelectorAll('.carousel__item');
-  
+
     toggleservice.forEach((toggle, index) => {
-      toggle.addEventListener('click', () => {
-        // Remove active class from all toggles
-        toggleservice.forEach(span => span.classList.remove('active'));
-        // Add active class to clicked toggle
-        toggle.classList.add('active');
-  
-        // Show corresponding carousel item
-        carouselItems.forEach((item, itemIndex) => {
-          item.style.display = itemIndex === index ? 'block' : 'none';
+        toggle.addEventListener('click', () => {
+            // Remove active class from all toggles
+            toggleservice.forEach(span => span.classList.remove('active'));
+            // Add active class to clicked toggle
+            toggle.classList.add('active');
+
+            // Show corresponding carousel item
+            carouselItems.forEach((item, itemIndex) => {
+                item.style.display = itemIndex === index ? 'block' : 'none';
+            });
         });
-      });
     });
-  
+
     // Set default active section (Masterplanning)
     const defaultIndex = 0; // Change this to the index you want active by default
     toggleservice[defaultIndex].click();
-  });
+});
 
 
 
@@ -606,57 +607,57 @@ document.addEventListener('DOMContentLoaded', function () {
 let slideIndex = 1;
 
 function openHighlight() {
-  document.getElementById("highlight-section").style.display = "flex";
-  showSlides(slideIndex);
+    document.getElementById("highlight-section").style.display = "flex";
+    showSlides(slideIndex);
 }
 
 function closeHighlight() {
-  document.getElementById("highlight-section").style.display = "none";
+    document.getElementById("highlight-section").style.display = "none";
 }
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let slides = document.getElementsByClassName("highlight-slide");
-  let indicators = document.getElementsByClassName("indicator");
-  
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  
-  for (let i = 0; i < indicators.length; i++) {
-    indicators[i].className = indicators[i].className.replace(" active", "");
-  }
-  
-  slides[slideIndex-1].style.display = "block";  
-  indicators[slideIndex-1].className += " active";
+    let slides = document.getElementsByClassName("highlight-slide");
+    let indicators = document.getElementsByClassName("indicator");
+
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (let i = 0; i < indicators.length; i++) {
+        indicators[i].className = indicators[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    indicators[slideIndex - 1].className += " active";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');  // Select all elements with the nav-link class
     const currentPath = window.location.pathname;  // Get the current path
-  
+
     navLinks.forEach(link => {
-      // Check if the href of the link matches the current path or is the index ("/")
-      if (link.getAttribute('href') === currentPath || currentPath === '/') {
-        link.classList.add('active');  // Add active class to the matching link
-      }
+        // Check if the href of the link matches the current path or is the index ("/")
+        if (link.getAttribute('href') === currentPath || currentPath === '/') {
+            link.classList.add('active');  // Add active class to the matching link
+        }
     });
-  });
-  
+});
 
 
 
-  document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     const projects = {
         'project1': [
             '/IMG/images/3D\ 1.png',

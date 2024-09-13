@@ -3,6 +3,10 @@
   background-color: rgba(18, 0, 34, 0.877);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #home {
   margin-top: 10vh;
 }
@@ -261,7 +265,6 @@ html {
 
   .content-container .text-column {
     width: 95%;
-    padding: 20px;
   }
 
   .carousel__item #masterplanning .container .content-container .image-column {
@@ -374,8 +377,28 @@ html {
     margin-top: 15vh;
   }
 
+  .myself span {
+    font-size: 18px;
+  }
+
+  html body .slide .Notepad {
+    font-size: 26px;
+  }
+
+  .experience span {
+    font-size: 18px;
+  }
+
   html body #text {
     font-size: 24px;
+  }
+
+  html body .text-column p {
+    font-size: 18px;
+  }
+
+  body .text-column ul li {
+    font-size: 18px;
   }
 
   .huhh ul .huh {
@@ -966,7 +989,7 @@ nav ul li div a {
   padding-top: 75%;
   background-size: cover;
   background-position: center;
-  display: none; /* Initially hide all images */
+  display: block; /* Initially hide all images */
   opacity: 0;
   animation: slideIn 1.5s forwards;
 }
@@ -1557,7 +1580,7 @@ footer div:first-child {
 
 .text-column p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .text-column ul li {
