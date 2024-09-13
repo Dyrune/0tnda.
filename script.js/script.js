@@ -552,95 +552,70 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleservice = document.querySelectorAll('.toggleservice span');
-    const carouselItems = document.querySelectorAll('.carousel__item');
-
-    toggleservice.forEach((toggle, index) => {
-        toggle.addEventListener('click', () => {
-            // Remove active class from all toggles
-            toggleservice.forEach(span => span.classList.remove('active'));
-            // Add active class to clicked toggle
-            toggle.classList.add('active');
-
-            // Show corresponding carousel item
-            carouselItems.forEach((item, itemIndex) => {
-                item.style.display = itemIndex === index ? 'block' : 'none';
-            });
-        });
-    });
-
-    // Set default active section (Masterplanning)
-    const defaultIndex = 0; // Change this to the index you want active by default
-    toggleservice[defaultIndex].click();
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleservice = document.querySelectorAll('.toggleservice span');
-    const carouselItems = document.querySelectorAll('.carousel__item');
-
-    toggleservice.forEach((toggle, index) => {
-        toggle.addEventListener('click', () => {
-            // Remove active class from all toggles
-            toggleservice.forEach(span => span.classList.remove('active'));
-            // Add active class to clicked toggle
-            toggle.classList.add('active');
-
-            // Show corresponding carousel item
-            carouselItems.forEach((item, itemIndex) => {
-                item.style.display = itemIndex === index ? 'block' : 'none';
-            });
-        });
-    });
-
-    // Set default active section (Masterplanning)
-    const defaultIndex = 0; // Change this to the index you want active by default
-    toggleservice[defaultIndex].click();
-});
-
-
-
-
-let slideIndex = 1;
-
+// Function to open the highlight section for the active carousel item
 function openHighlight() {
-    document.getElementById("highlight-section").style.display = "flex";
-    showSlides(slideIndex);
-}
-
-function closeHighlight() {
-    document.getElementById("highlight-section").style.display = "none";
-}
-
-function plusSlides(n) {
+    // Get the active carousel item
+    const activeCarouselItem = document.querySelector('.carousel__item:not([style*="display: none"])');
+    
+    // Find the highlight section within the active carousel item
+    const highlightSection = activeCarouselItem.querySelector('.highlight-section');
+  
+    // Only show the highlight section for the active carousel item
+    if (highlightSection) {
+      highlightSection.style.display = 'block';
+    }
+  }
+  
+  // Function to close the currently active highlight section
+  function closeHighlight() {
+    // Get the active carousel item
+    const activeCarouselItem = document.querySelector('.carousel__item:not([style*="display: none"])');
+    
+    // Find the highlight section within the active carousel item
+    const highlightSection = activeCarouselItem.querySelector('.highlight-section');
+    
+    // Only close the highlight section for the active carousel item
+    if (highlightSection) {
+      highlightSection.style.display = 'none';
+    }
+  }
+  
+  // Function to handle slide navigation (if using navigation for highlight slideshow)
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
     showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
+  }
+  
+  function currentSlide(n) {
     showSlides(slideIndex = n);
-}
+  }
+  
+  function showSlides(n) {
+    let i;
+    const activeCarouselItem = document.querySelector('.carousel__item:not([style*="display: none"])');
+    const slides = activeCarouselItem.querySelectorAll('.highlight-slide');
+    const indicators = activeCarouselItem.querySelectorAll('.indicator');
+  
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    
+    // Hide all slides
+    slides.forEach(slide => { slide.style.display = 'none'; });
+    
+    // Remove active class from indicators
+    indicators.forEach(indicator => { indicator.className = indicator.className.replace(' active', ''); });
+    
+    // Show the current slide
+    slides[slideIndex - 1].style.display = 'block';
+    
+    // Highlight the current indicator
+    indicators[slideIndex - 1].className += ' active';
+  }
+  
 
-function showSlides(n) {
-    let slides = document.getElementsByClassName("highlight-slide");
-    let indicators = document.getElementsByClassName("indicator");
 
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    for (let i = 0; i < indicators.length; i++) {
-        indicators[i].className = indicators[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    indicators[slideIndex - 1].className += " active";
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');  // Select all elements with the nav-link class
