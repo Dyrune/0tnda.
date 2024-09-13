@@ -368,6 +368,11 @@ html {
   html body #about .context button {
     margin-left: 2vh;
   }
+
+  html body .selec {
+    font-size: 26px;
+    padding: 20px;
+  }
 }
 
 
@@ -378,15 +383,15 @@ html {
   }
 
   .myself span {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   html body .slide .Notepad {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .experience span {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   html body #text {
@@ -394,11 +399,11 @@ html {
   }
 
   html body .text-column p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   body .text-column ul li {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .huhh ul .huh {
@@ -407,6 +412,10 @@ html {
   
   html body #header .dropdown-content {
     display: flex;
+  }
+
+  html body .text-column .highlight-button {
+    font-size: 14px;
   }
 
   .dropdownn-content {
