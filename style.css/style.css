@@ -391,6 +391,10 @@ html {
     padding-top: 0;
   }
 
+  html body .infopro div {
+    padding-left: 20px;
+  }
+
   body .infopro div h2 {
     font-size: 18px;
     padding: 0;
