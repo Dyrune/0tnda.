@@ -53,7 +53,8 @@ html {
 .infopro div h2 {
   padding-right: 20px;
   color: white;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .infopro div p {
@@ -96,8 +97,6 @@ html {
   color: chocolate;
   text-shadow: 1px 3px 3px #555;
 }
-
-
 
 .slides {
   display: flex;
@@ -211,7 +210,6 @@ html {
   align-items: center;
 }
 
-
 #header {
   box-shadow: 2px 4px 4px black;
   position: fixed;
@@ -230,18 +228,16 @@ html {
   text-decoration: none;
 }
 
-
-  .Notepad {
-    margin-top: 25vh;
-    color: black;
-    padding: 20px;
-    font-size: 36px;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    width: 40%;
-    text-decoration: none;
-    font-weight: bolder;
-  }
-
+.Notepad {
+  margin-top: 25vh;
+  color: black;
+  padding: 20px;
+  font-size: 36px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 40%;
+  text-decoration: none;
+  font-weight: bolder;
+}
 
 @media (min-width: 1101px) {
   .portfolio-items {
@@ -250,7 +246,6 @@ html {
     gap: 80px;
     padding: 70px;
   }
-
 }
 
 @media (max-width: 950px) {
@@ -271,13 +266,17 @@ html {
     width: 100%;
   }
 
-  .carousel__item #masterplanning .container .content-container .image-column img {
+  .carousel__item
+    #masterplanning
+    .container
+    .content-container
+    .image-column
+    img {
     width: 100%;
     height: auto;
     padding: 0;
   }
 }
-
 
 @media (max-width: 950px) {
   body #about .container {
@@ -310,9 +309,8 @@ html {
   .portfolio-items {
     grid-template-columns: repeat(2, 1fr);
     display: grid;
-    
   }
-  
+
   #header .container {
     padding: 10px 0;
   }
@@ -323,13 +321,20 @@ html {
 }
 
 @media (max-width: 630px) {
-
   #services .container .toggleservice {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
+  }
+
+  body .form-group {
+    padding: 10px 15px;
+  }
+
+  body footer .container {
+    font-size: 14px;
   }
 
   #services .container .toggleservice span {
@@ -342,10 +347,10 @@ html {
   }
 
   .Notepad {
-  font-size: 30px;
-  padding: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  width: 70%;
+    font-size: 30px;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    width: 70%;
   }
 
   .form-group {
@@ -375,15 +380,28 @@ html {
   }
 }
 
-
 @media (max-width: 768px) {
-
   .contentcontainer .contactcontent {
     margin-top: 15vh;
   }
 
+  html body .infopro div p {
+    font-size: 16px;
+    padding-left: 20px;
+    padding-top: 0;
+  }
+
+  body .infopro div h2 {
+    font-size: 18px;
+    padding: 0;
+  }
+
   .myself span {
     font-size: 16px;
+  }
+
+  body .portfolio-item span {
+    font-size: 18px;
   }
 
   html body .slide .Notepad {
@@ -409,7 +427,7 @@ html {
   .huhh ul .huh {
     flex-direction: column;
   }
-  
+
   html body #header .dropdown-content {
     display: flex;
   }
@@ -511,7 +529,6 @@ html {
     display: none;
   }
 
-
   .lightbox .arrow {
     position: absolute;
     top: 50%;
@@ -528,7 +545,7 @@ html {
     bottom: 0;
   }
 
-  #header .container .mobile h3{
+  #header .container .mobile h3 {
     color: rgba(18, 0, 34, 0.877);
     margin: 15px 0px;
   }
@@ -595,7 +612,7 @@ html {
   color: black;
   color: chocolate;
   padding: 10px;
-  border-bottom: 4px solid chocolate; 
+  border-bottom: 4px solid chocolate;
 }
 
 #services .container h2 b {
@@ -1010,7 +1027,7 @@ nav ul li div a {
   width: max-content;
   padding: 15px;
   font-size: 22px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 #loadMoree {
@@ -1038,10 +1055,10 @@ nav ul li div a {
 #loadMoree a {
   text-decoration: none;
   color: black;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bolder;
 }
-
 
 #loadMore {
   display: block;
@@ -1116,7 +1133,7 @@ nav ul li div a {
 
 .context {
   font-size: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -1129,17 +1146,20 @@ nav ul li div a {
   font-size: 22px;
 }
 
-.myself, .experience, .education {
+.myself,
+.experience,
+.education {
   padding-bottom: 30px;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.experience span:first-child, .education span:first-child {
+.experience span:first-child,
+.education span:first-child {
   padding-bottom: 10px;
   font-weight: bolder;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 22px;
   color: rgb(160, 70, 5);
 }
@@ -1172,7 +1192,6 @@ nav ul li div a {
   cursor: pointer;
 }
 
-
 #services .container h2 {
   font-family: monospace;
   font-size: 26px;
@@ -1194,7 +1213,6 @@ nav ul li div a {
   width: 100%;
   cursor: pointer;
 }
-
 
 .carousel__item img {
   width: 50%;
@@ -1278,7 +1296,8 @@ input:hover {
 
 .form-group label {
   font-size: 18px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 120px;
   font-weight: 500;
 }
@@ -1346,7 +1365,8 @@ footer span img {
 
 #texxt {
   font-size: 28px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bolder;
   text-decoration: none;
   color: white;
@@ -1365,7 +1385,7 @@ footer div:first-child {
   width: 80%;
 }
 
-.serviceheader button{
+.serviceheader button {
   height: 6vh;
   padding: 5px 15px;
   cursor: pointer;
@@ -1429,7 +1449,7 @@ footer div:first-child {
   font-size: 18px;
   letter-spacing: 1px;
   text-decoration: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #masterplanning h1 {
@@ -1438,7 +1458,6 @@ footer div:first-child {
   font-family: monospace;
   font-weight: bold;
 }
-
 
 #architecture h1 {
   font-size: 34px;
@@ -1512,7 +1531,6 @@ footer div:first-child {
   color: black;
 }
 
-
 .grut1 nav ul {
   display: flex;
   flex-direction: column;
@@ -1534,10 +1552,10 @@ footer div:first-child {
   justify-content: space-evenly;
 }
 
-.vince, .approch {
+.vince,
+.approch {
   width: 40%;
 }
-
 
 .banner {
   position: relative;
@@ -1573,7 +1591,10 @@ footer div:first-child {
   margin-right: 10px;
 }
 
-.left-column, .right-column, .image-column, .text-column {
+.left-column,
+.right-column,
+.image-column,
+.text-column {
   width: 50%;
 }
 
@@ -1588,13 +1609,13 @@ footer div:first-child {
 }
 
 .text-column p {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 20px;
 }
 
 .text-column ul li {
   font-size: 22px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .image-column img {
@@ -1620,7 +1641,7 @@ button.projhighlight {
 
 /* General Section Style */
 .services-section {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 /* Image Banner and Overlay */
@@ -1660,7 +1681,8 @@ button.projhighlight {
   padding: 40px 0;
 }
 
-.left-column, .right-column {
+.left-column,
+.right-column {
   width: 48%;
 }
 
@@ -1669,7 +1691,8 @@ button.projhighlight {
   margin-bottom: 10px;
 }
 
-.left-column p, .left-column ul {
+.left-column p,
+.left-column ul {
   font-size: 16px;
 }
 
@@ -1699,7 +1722,8 @@ button.projhighlight {
   margin-bottom: 15px;
 }
 
-.offer-process p, .offer-process ul {
+.offer-process p,
+.offer-process ul {
   font-size: 16px;
 }
 
@@ -1707,8 +1731,6 @@ button.projhighlight {
   list-style-type: decimal;
   padding-left: 20px;
 }
-
-
 
 /* Fullscreen flide-slider styling */
 .fullscreen {
@@ -1751,7 +1773,8 @@ button.projhighlight {
 }
 
 /* Centered arrows on both sides of the image */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1876,7 +1899,8 @@ button.projhighlight {
   object-fit: cover; /* Ensure image covers the container */
 }
 
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1893,7 +1917,6 @@ button.projhighlight {
 .prev {
   left: 10px;
 }
-
 
 .next {
   right: 10px;
